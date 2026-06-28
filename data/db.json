@@ -1,0 +1,2620 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "زنانه",
+      "slug": "women",
+      "img": "src/assets/category/women2.png"
+    },
+    {
+      "id": "2",
+      "name": "مردانه",
+      "slug": "men",
+      "img": "src/assets/category/men1.png"
+    },
+    {
+      "id": "3",
+      "name": "کیف",
+      "slug": "bags",
+      "img": "src/assets/category/bag.png"
+    },
+    {
+      "id": "4",
+      "name": "کفش",
+      "slug": "shoes",
+      "img": "src/assets/category/shoes.png"
+    },
+    {
+      "id": "5",
+      "name": "روسری",
+      "slug": "scarf",
+      "img": "src/assets/category/scarf&hat.png"
+    },
+    {
+      "id": "6",
+      "name": "اکسسوری",
+      "slug": "accessories",
+      "img": "src/assets/category/Accessory.png"
+    },
+    {
+      "id": "7",
+      "name": "همه محصولات",
+      "slug": "َAll",
+      "img": "src/assets/category/Allproducts.png"
+    }
+  ],
+  "types": [
+    {
+      "id": "1",
+      "name": "t-shirt"
+    },
+    {
+      "id": "2",
+      "name": "jeans"
+    },
+    {
+      "id": "3",
+      "name": "hoodie"
+    },
+    {
+      "id": "4",
+      "name": "jacket"
+    },
+    {
+      "id": "5",
+      "name": "shirt"
+    },
+    {
+      "id": "6",
+      "name": "pants"
+    },
+    {
+      "id": "7",
+      "name": "shorts"
+    },
+    {
+      "id": "8",
+      "name": "dress"
+    },
+    {
+      "id": "9",
+      "name": "skirt"
+    },
+    {
+      "id": "10",
+      "name": "blouse"
+    },
+    {
+      "id": "11",
+      "name": "sweater"
+    }
+  ],
+  "products": [
+    {
+      "id": "2",
+      "title": "Men Black T-Shirt",
+      "price": 590000,
+      "categoryId": 2,
+      "typeId": 1,
+      "isSale": true,
+      "image": "/cloths/2.png",
+      "brand": "Urban Wear",
+      "description": "Comfortable cotton t-shirt suitable for everyday wear.",
+      "rating": 4.8,
+      "reviewCount": 214,
+      "stock": 24,
+      "colors": [
+        "Black",
+        "White"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Women Straight Jeans",
+      "price": 1490000,
+      "categoryId": 1,
+      "typeId": 2,
+      "isSale": false,
+      "image": "/cloths/3.png",
+      "brand": "Nova",
+      "description": "Classic straight-fit denim jeans with soft stretch fabric.",
+      "rating": 4.7,
+      "reviewCount": 181,
+      "stock": 18,
+      "colors": [
+        "Blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Men Gray Hoodie",
+      "price": 1290000,
+      "categoryId": 2,
+      "typeId": 3,
+      "isSale": true,
+      "image": "/cloths/4.png",
+      "brand": "Prime Style",
+      "description": "Warm fleece hoodie designed for casual winter outfits.",
+      "rating": 4.9,
+      "reviewCount": 306,
+      "stock": 15,
+      "colors": [
+        "Gray",
+        "Black"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Women Autumn Jacket",
+      "price": 2290000,
+      "categoryId": 1,
+      "typeId": 4,
+      "isSale": false,
+      "image": "/cloths/5.png",
+      "brand": "Urban Wear",
+      "description": "Stylish lightweight jacket perfect for autumn weather.",
+      "rating": 4.6,
+      "reviewCount": 142,
+      "stock": 10,
+      "colors": [
+        "Brown",
+        "Beige"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Men Formal Shirt",
+      "price": 1390000,
+      "categoryId": 2,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/6.png",
+      "brand": "Prime Style",
+      "description": "Slim-fit formal shirt suitable for office and business meetings.",
+      "rating": 4.5,
+      "reviewCount": 98,
+      "stock": 19,
+      "colors": [
+        "White",
+        "Light Blue"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Women Mini Skirt",
+      "price": 790000,
+      "categoryId": 1,
+      "typeId": 9,
+      "isSale": false,
+      "image": "/cloths/10.png",
+      "brand": "Urban Wear",
+      "description": "Casual mini skirt made from soft lightweight fabric.",
+      "rating": 4.6,
+      "reviewCount": 109,
+      "stock": 17,
+      "colors": [
+        "Black",
+        "Gray"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Women Silk Blouse",
+      "price": 990000,
+      "categoryId": 1,
+      "typeId": 10,
+      "isSale": false,
+      "image": "/cloths/11.png",
+      "brand": "Prime Style",
+      "description": "Elegant silk blouse suitable for formal and casual occasions.",
+      "rating": 4.8,
+      "reviewCount": 166,
+      "stock": 14,
+      "colors": [
+        "White",
+        "Cream"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Men Winter Sweater",
+      "price": 1190000,
+      "categoryId": 2,
+      "typeId": 11,
+      "isSale": true,
+      "image": "/cloths/12.png",
+      "brand": "Prime Style",
+      "description": "Warm knitted sweater for cold winter days.",
+      "rating": 4.9,
+      "reviewCount": 244,
+      "stock": 18,
+      "colors": [
+        "Gray",
+        "Navy"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    {
+      "id": "13",
+      "title": "White Sneakers",
+      "price": 2490000,
+      "categoryId": 4,
+      "typeId": 6,
+      "isSale": false,
+      "image": "/cloths/13.png",
+      "brand": "Nova",
+      "description": "Comfortable everyday white sneakers with modern design.",
+      "rating": 4.9,
+      "reviewCount": 398,
+      "stock": 20,
+      "colors": [
+        "White"
+      ],
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43"
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Leather Handbag",
+      "price": 1790000,
+      "categoryId": 3,
+      "typeId": 5,
+      "isSale": true,
+      "image": "/cloths/14.png",
+      "brand": "Urban Wear",
+      "description": "Elegant leather handbag with spacious interior.",
+      "rating": 4.8,
+      "reviewCount": 193,
+      "stock": 12,
+      "colors": [
+        "Brown",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "15",
+      "title": "Women's Shoulder Bag",
+      "price": 1490000,
+      "categoryId": 3,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/15.png",
+      "brand": "Urban Wear",
+      "description": "Stylish shoulder bag with spacious compartments for everyday use.",
+      "rating": 4.7,
+      "reviewCount": 154,
+      "stock": 16,
+      "colors": [
+        "Black",
+        "Beige"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "16",
+      "title": "Silk Scarf",
+      "price": 490000,
+      "categoryId": 5,
+      "typeId": 10,
+      "isSale": false,
+      "image": "/cloths/16.png",
+      "brand": "Prime Style",
+      "description": "Soft silk scarf that adds elegance to every outfit.",
+      "rating": 4.8,
+      "reviewCount": 92,
+      "stock": 30,
+      "colors": [
+        "White",
+        "Cream"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "17",
+      "title": "Summer Scarf",
+      "price": 390000,
+      "categoryId": 5,
+      "typeId": 10,
+      "isSale": true,
+      "image": "/cloths/17.png",
+      "brand": "Urban Wear",
+      "description": "Lightweight cotton scarf perfect for spring and summer.",
+      "rating": 4.5,
+      "reviewCount": 79,
+      "stock": 34,
+      "colors": [
+        "Pink",
+        "White"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "18",
+      "title": "Leather Belt",
+      "price": 550000,
+      "categoryId": 7,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/18.png",
+      "brand": "Nova",
+      "description": "Premium leather belt suitable for casual and formal styles.",
+      "rating": 4.8,
+      "reviewCount": 117,
+      "stock": 26,
+      "colors": [
+        "Black",
+        "Brown"
+      ],
+      "sizes": [
+        "90",
+        "95",
+        "100",
+        "105"
+      ]
+    },
+    {
+      "id": "19",
+      "title": "Classic Sunglasses",
+      "price": 1290000,
+      "categoryId": 7,
+      "typeId": 5,
+      "isSale": true,
+      "image": "/cloths/19.png",
+      "brand": "Prime Style",
+      "description": "Classic UV-protected sunglasses with timeless design.",
+      "rating": 4.9,
+      "reviewCount": 305,
+      "stock": 15,
+      "colors": [
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "20",
+      "title": "Sport Watch",
+      "price": 3490000,
+      "categoryId": 7,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/20.png",
+      "brand": "Nova",
+      "description": "Sport watch with water resistance and modern design.",
+      "rating": 4.8,
+      "reviewCount": 268,
+      "stock": 13,
+      "colors": [
+        "Black",
+        "Blue"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "21",
+      "title": "Men Denim Jacket",
+      "price": 2190000,
+      "categoryId": 2,
+      "typeId": 4,
+      "isSale": false,
+      "image": "/cloths/21.png",
+      "brand": "Urban Wear",
+      "description": "Classic men's denim jacket with comfortable regular fit.",
+      "rating": 4.9,
+      "reviewCount": 236,
+      "stock": 17,
+      "colors": [
+        "Blue"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    {
+      "id": "22",
+      "title": "Women Denim Jacket",
+      "price": 2290000,
+      "categoryId": 1,
+      "typeId": 4,
+      "isSale": true,
+      "image": "/cloths/22.png",
+      "brand": "Urban Wear",
+      "description": "Women's denim jacket designed for everyday casual outfits.",
+      "rating": 4.8,
+      "reviewCount": 191,
+      "stock": 15,
+      "colors": [
+        "Blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "23",
+      "title": "Men Black Hoodie",
+      "price": 1350000,
+      "categoryId": 2,
+      "typeId": 3,
+      "isSale": false,
+      "image": "/cloths/23.png",
+      "brand": "Prime Style",
+      "description": "Warm fleece hoodie with kangaroo pocket.",
+      "rating": 4.7,
+      "reviewCount": 184,
+      "stock": 20,
+      "colors": [
+        "Black"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    {
+      "id": "24",
+      "title": "Women White Hoodie",
+      "price": 1350000,
+      "categoryId": 1,
+      "typeId": 3,
+      "isSale": true,
+      "image": "/cloths/24.png",
+      "brand": "Prime Style",
+      "description": "Oversized white hoodie made from soft cotton blend.",
+      "rating": 4.8,
+      "reviewCount": 207,
+      "stock": 18,
+      "colors": [
+        "White"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "25",
+      "title": "Men Black Jeans",
+      "price": 1590000,
+      "categoryId": 2,
+      "typeId": 2,
+      "isSale": false,
+      "image": "/cloths/25.png",
+      "brand": "Nova",
+      "description": "Slim-fit black jeans made from premium stretch denim for everyday comfort.",
+      "rating": 4.8,
+      "reviewCount": 245,
+      "stock": 21,
+      "colors": [
+        "Black"
+      ],
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ]
+    },
+    {
+      "id": "26",
+      "title": "Women Skinny Jeans",
+      "price": 1590000,
+      "categoryId": 1,
+      "typeId": 2,
+      "isSale": true,
+      "image": "/cloths/26.png",
+      "brand": "Nova",
+      "description": "High-waisted skinny jeans with premium stretch fabric and modern fit.",
+      "rating": 4.9,
+      "reviewCount": 289,
+      "stock": 18,
+      "colors": [
+        "Blue"
+      ],
+      "sizes": [
+        "26",
+        "28",
+        "30",
+        "32"
+      ]
+    },
+    {
+      "id": "27",
+      "title": "Men Casual T-Shirt",
+      "price": 620000,
+      "categoryId": 2,
+      "typeId": 1,
+      "isSale": false,
+      "image": "/cloths/27.png",
+      "brand": "Urban Wear",
+      "description": "Soft cotton casual t-shirt designed for maximum comfort.",
+      "rating": 4.7,
+      "reviewCount": 178,
+      "stock": 33,
+      "colors": [
+        "White",
+        "Gray",
+        "Black"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    {
+      "id": "28",
+      "title": "Women Oversized T-Shirt",
+      "price": 690000,
+      "categoryId": 1,
+      "typeId": 1,
+      "isSale": true,
+      "image": "/cloths/28.png",
+      "brand": "Urban Wear",
+      "description": "Oversized cotton t-shirt with relaxed fit and modern everyday style.",
+      "rating": 4.8,
+      "reviewCount": 201,
+      "stock": 24,
+      "colors": [
+        "White",
+        "Beige"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "29",
+      "title": "Men Formal Shoes",
+      "price": 2890000,
+      "categoryId": 4,
+      "typeId": 6,
+      "isSale": false,
+      "image": "/cloths/29.png",
+      "brand": "Prime Style",
+      "description": "Premium leather formal shoes suitable for office and special occasions.",
+      "rating": 4.9,
+      "reviewCount": 162,
+      "stock": 12,
+      "colors": [
+        "Black",
+        "Brown"
+      ],
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ]
+    },
+    {
+      "id": "30",
+      "title": "Women High Heels",
+      "price": 2990000,
+      "categoryId": 4,
+      "typeId": 6,
+      "isSale": true,
+      "image": "/cloths/30.png",
+      "brand": "Prime Style",
+      "description": "Elegant high heels designed for parties and formal events.",
+      "rating": 4.8,
+      "reviewCount": 139,
+      "stock": 10,
+      "colors": [
+        "Black",
+        "Nude"
+      ],
+      "sizes": [
+        "37",
+        "38",
+        "39",
+        "40"
+      ]
+    },
+    {
+      "id": "31",
+      "title": "Classic Leather Backpack",
+      "price": 1890000,
+      "categoryId": 3,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/31.png",
+      "brand": "Urban Wear",
+      "description": "Premium leather backpack with spacious compartments for work and travel.",
+      "rating": 4.8,
+      "reviewCount": 172,
+      "stock": 14,
+      "colors": [
+        "Black",
+        "Brown"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "32",
+      "title": "Canvas Tote Bag",
+      "price": 790000,
+      "categoryId": 3,
+      "typeId": 5,
+      "isSale": true,
+      "image": "/cloths/32.png",
+      "brand": "Nova",
+      "description": "Lightweight canvas tote bag suitable for shopping and daily use.",
+      "rating": 4.6,
+      "reviewCount": 96,
+      "stock": 25,
+      "colors": [
+        "Beige",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "33",
+      "title": "Laptop Backpack",
+      "price": 2150000,
+      "categoryId": 3,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/33.png",
+      "brand": "Prime Style",
+      "description": "Water-resistant backpack with padded laptop compartment.",
+      "rating": 4.9,
+      "reviewCount": 241,
+      "stock": 11,
+      "colors": [
+        "Gray",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "34",
+      "title": "Crossbody Bag",
+      "price": 990000,
+      "categoryId": 3,
+      "typeId": 5,
+      "isSale": true,
+      "image": "/cloths/34.png",
+      "brand": "Urban Wear",
+      "description": "Compact crossbody bag with adjustable shoulder strap.",
+      "rating": 4.7,
+      "reviewCount": 134,
+      "stock": 18,
+      "colors": [
+        "Brown",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "35",
+      "title": "Travel Duffel Bag",
+      "price": 1690000,
+      "categoryId": 3,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/35.png",
+      "brand": "Nova",
+      "description": "Large capacity travel bag perfect for weekend trips.",
+      "rating": 4.8,
+      "reviewCount": 117,
+      "stock": 9,
+      "colors": [
+        "Navy",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "36",
+      "title": "Running Sneakers",
+      "price": 2390000,
+      "categoryId": 4,
+      "typeId": 6,
+      "isSale": true,
+      "image": "/cloths/36.png",
+      "brand": "Nova",
+      "description": "Lightweight running sneakers with breathable mesh upper.",
+      "rating": 4.9,
+      "reviewCount": 354,
+      "stock": 20,
+      "colors": [
+        "White",
+        "Black"
+      ],
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ]
+    },
+    {
+      "id": "37",
+      "title": "Chelsea Boots",
+      "price": 3190000,
+      "categoryId": 4,
+      "typeId": 6,
+      "isSale": false,
+      "image": "/cloths/37.png",
+      "brand": "Prime Style",
+      "description": "Elegant leather Chelsea boots suitable for smart casual outfits.",
+      "rating": 4.8,
+      "reviewCount": 165,
+      "stock": 12,
+      "colors": [
+        "Brown",
+        "Black"
+      ],
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43"
+      ]
+    },
+    {
+      "id": "38",
+      "title": "Canvas Sneakers",
+      "price": 1290000,
+      "categoryId": 4,
+      "typeId": 6,
+      "isSale": true,
+      "image": "/cloths/38.png",
+      "brand": "Urban Wear",
+      "description": "Classic canvas sneakers for casual everyday outfits.",
+      "rating": 4.7,
+      "reviewCount": 201,
+      "stock": 28,
+      "colors": [
+        "White",
+        "Navy"
+      ],
+      "sizes": [
+        "39",
+        "40",
+        "41",
+        "42",
+        "43"
+      ]
+    },
+    {
+      "id": "39",
+      "title": "Leather Sandals",
+      "price": 1490000,
+      "categoryId": 4,
+      "typeId": 6,
+      "isSale": false,
+      "image": "/cloths/39.png",
+      "brand": "Prime Style",
+      "description": "Comfortable genuine leather sandals for summer.",
+      "rating": 4.6,
+      "reviewCount": 88,
+      "stock": 17,
+      "colors": [
+        "Brown"
+      ],
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43"
+      ]
+    },
+    {
+      "id": "40",
+      "title": "Slip-On Shoes",
+      "price": 1790000,
+      "categoryId": 4,
+      "typeId": 6,
+      "isSale": true,
+      "image": "/cloths/40.png",
+      "brand": "Nova",
+      "description": "Comfortable slip-on shoes designed for all-day wear.",
+      "rating": 4.8,
+      "reviewCount": 149,
+      "stock": 19,
+      "colors": [
+        "Black",
+        "Gray"
+      ],
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ]
+    },
+    {
+      "id": "41",
+      "title": "Leather Wallet",
+      "price": 790000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/41.png",
+      "brand": "Prime Style",
+      "description": "Premium genuine leather wallet with multiple card slots.",
+      "rating": 4.8,
+      "reviewCount": 183,
+      "stock": 24,
+      "colors": [
+        "Brown",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "42",
+      "title": "Baseball Cap",
+      "price": 490000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": true,
+      "image": "/cloths/42.png",
+      "brand": "Urban Wear",
+      "description": "Classic baseball cap with adjustable strap.",
+      "rating": 4.6,
+      "reviewCount": 101,
+      "stock": 32,
+      "colors": [
+        "Black",
+        "White",
+        "Navy"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "43",
+      "title": "Knitted Beanie",
+      "price": 390000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/43.png",
+      "brand": "Nova",
+      "description": "Warm knitted beanie perfect for cold weather.",
+      "rating": 4.7,
+      "reviewCount": 76,
+      "stock": 28,
+      "colors": [
+        "Gray",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "44",
+      "title": "Cotton Shawl",
+      "price": 620000,
+      "categoryId": 5,
+      "typeId": 10,
+      "isSale": true,
+      "image": "/cloths/44.png",
+      "brand": "Urban Wear",
+      "description": "Soft cotton shawl suitable for spring and autumn.",
+      "rating": 4.7,
+      "reviewCount": 93,
+      "stock": 21,
+      "colors": [
+        "Cream",
+        "Pink"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "45",
+      "title": "Wool Winter Scarf",
+      "price": 890000,
+      "categoryId": 5,
+      "typeId": 10,
+      "isSale": false,
+      "image": "/cloths/45.png",
+      "brand": "Prime Style",
+      "description": "Premium wool scarf for maximum warmth during winter.",
+      "rating": 4.9,
+      "reviewCount": 141,
+      "stock": 15,
+      "colors": [
+        "Gray",
+        "Camel"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "46",
+      "title": "Analog Watch",
+      "price": 2690000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/46.png",
+      "brand": "Nova",
+      "description": "Elegant analog wristwatch with stainless steel case.",
+      "rating": 4.8,
+      "reviewCount": 214,
+      "stock": 12,
+      "colors": [
+        "Silver",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "47",
+      "title": "Smart Watch",
+      "price": 4590000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": true,
+      "image": "/cloths/47.png",
+      "brand": "Prime Style",
+      "description": "Modern smartwatch with heart-rate and fitness tracking.",
+      "rating": 4.9,
+      "reviewCount": 396,
+      "stock": 9,
+      "colors": [
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "48",
+      "title": "Braided Leather Belt",
+      "price": 690000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/48.png",
+      "brand": "Urban Wear",
+      "description": "Braided leather belt with classic metal buckle.",
+      "rating": 4.7,
+      "reviewCount": 87,
+      "stock": 19,
+      "colors": [
+        "Brown"
+      ],
+      "sizes": [
+        "90",
+        "95",
+        "100",
+        "105"
+      ]
+    },
+    {
+      "id": "49",
+      "title": "Aviator Sunglasses",
+      "price": 1190000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": true,
+      "image": "/cloths/49.png",
+      "brand": "Prime Style",
+      "description": "Classic aviator sunglasses with UV400 protection.",
+      "rating": 4.8,
+      "reviewCount": 158,
+      "stock": 17,
+      "colors": [
+        "Gold",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "50",
+      "title": "Travel Passport Holder",
+      "price": 590000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/50.png",
+      "brand": "Nova",
+      "description": "Compact passport holder made from premium synthetic leather.",
+      "rating": 4.6,
+      "reviewCount": 64,
+      "stock": 23,
+      "colors": [
+        "Brown",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "51",
+      "title": "Minimal Card Holder",
+      "price": 420000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": true,
+      "image": "/cloths/51.png",
+      "brand": "Urban Wear",
+      "description": "Slim card holder crafted for everyday convenience.",
+      "rating": 4.5,
+      "reviewCount": 58,
+      "stock": 31,
+      "colors": [
+        "Black",
+        "Brown"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "52",
+      "title": "Leather Key Holder",
+      "price": 350000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/52.png",
+      "brand": "Prime Style",
+      "description": "Premium leather key holder with secure snap closure.",
+      "rating": 4.6,
+      "reviewCount": 41,
+      "stock": 27,
+      "colors": [
+        "Brown",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "53",
+      "title": "Cashmere Scarf",
+      "price": 1290000,
+      "categoryId": 5,
+      "typeId": 10,
+      "isSale": false,
+      "image": "/cloths/53.png",
+      "brand": "Nova",
+      "description": "Luxurious cashmere scarf with an ultra-soft texture.",
+      "rating": 4.9,
+      "reviewCount": 133,
+      "stock": 12,
+      "colors": [
+        "Camel",
+        "Gray"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "54",
+      "title": "Printed Fashion Scarf",
+      "price": 590000,
+      "categoryId": 5,
+      "typeId": 10,
+      "isSale": true,
+      "image": "/cloths/54.png",
+      "brand": "Urban Wear",
+      "description": "Colorful printed scarf to complete casual outfits.",
+      "rating": 4.7,
+      "reviewCount": 88,
+      "stock": 22,
+      "colors": [
+        "Blue",
+        "Pink"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "55",
+      "title": "Digital Sport Watch",
+      "price": 2390000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": true,
+      "image": "/cloths/55.png",
+      "brand": "Nova",
+      "description": "Digital sports watch with stopwatch and water resistance.",
+      "rating": 4.8,
+      "reviewCount": 219,
+      "stock": 14,
+      "colors": [
+        "Black",
+        "Blue"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "56",
+      "title": "Luxury Leather Belt",
+      "price": 890000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/56.png",
+      "brand": "Prime Style",
+      "description": "Elegant leather belt with premium metal buckle.",
+      "rating": 4.8,
+      "reviewCount": 103,
+      "stock": 16,
+      "colors": [
+        "Black",
+        "Brown"
+      ],
+      "sizes": [
+        "90",
+        "95",
+        "100",
+        "105"
+      ]
+    },
+    {
+      "id": "57",
+      "title": "Round Sunglasses",
+      "price": 990000,
+      "categoryId": 6,
+      "typeId": 5,
+      "isSale": true,
+      "image": "/cloths/57.png",
+      "brand": "Urban Wear",
+      "description": "Retro round sunglasses with UV400 protection.",
+      "rating": 4.7,
+      "reviewCount": 147,
+      "stock": 20,
+      "colors": [
+        "Black",
+        "Gold"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "58",
+      "title": "Travel Organizer Bag",
+      "price": 790000,
+      "categoryId": 3,
+      "typeId": 5,
+      "isSale": false,
+      "image": "/cloths/58.png",
+      "brand": "Nova",
+      "description": "Compact organizer bag for travel accessories.",
+      "rating": 4.6,
+      "reviewCount": 72,
+      "stock": 18,
+      "colors": [
+        "Gray",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "59",
+      "title": "Mini Crossbody Bag",
+      "price": 1190000,
+      "categoryId": 3,
+      "typeId": 5,
+      "isSale": true,
+      "image": "/cloths/59.png",
+      "brand": "Prime Style",
+      "description": "Minimal crossbody bag perfect for everyday essentials.",
+      "rating": 4.8,
+      "reviewCount": 126,
+      "stock": 15,
+      "colors": [
+        "White",
+        "Black"
+      ],
+      "sizes": []
+    },
+    {
+      "id": "60",
+      "title": "Slip-On Sneakers",
+      "price": 1690000,
+      "categoryId": 4,
+      "typeId": 6,
+      "isSale": false,
+      "image": "/cloths/60.png",
+      "brand": "Urban Wear",
+      "description": "Comfortable slip-on sneakers for everyday walking.",
+      "rating": 4.8,
+      "reviewCount": 176,
+      "stock": 19,
+      "colors": [
+        "White",
+        "Gray"
+      ],
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ]
+    }
+  ],
+  "wishlists": [
+    {
+      "id": "1",
+      "userId": "hvtkKe_Fr_8",
+      "productId": "2"
+    },
+    {
+      "id": "1",
+      "userId": "hvtkKe_Fr_8",
+      "productId": "4"
+    }
+  ],
+  "cart": [],
+  "users": [
+    {
+      "firstName": "وحید",
+      "lastName": "ahmadi",
+      "password": "123456789",
+      "tel": "09364812065",
+      "email": "vahidtrksh@gmail.com",
+      "id": "hvtkKe_Fr_8",
+      "gender": "male",
+      "role": "user"
+    },
+    {
+      "firstName": "sabaa",
+      "lastName": "mohamadi",
+      "password": "123456789",
+      "tel": "09181306532",
+      "email": "samim2021400@gmail.com",
+      "id": "f8QymxRc6Js",
+      "gender": "femaile",
+      "role": "admin"
+    }
+  ],
+  "addresses": [
+    {
+      "userId": "hvtkKe_Fr_8",
+      "stateId": 1,
+      "provinceId": "15",
+      "countyId": "3",
+      "explanation": "کوچه گل نسترن واحد 7",
+      "postalCode": "1234567895",
+      "id": "WIUy-xs9_zw"
+    },
+    {
+      "userId": "hvtkKe_Fr_8",
+      "stateId": 1,
+      "provinceId": "15",
+      "countyId": "1",
+      "explanation": "کوچه گل نسترن واحد 7",
+      "postalCode": "1234567895",
+      "id": "6aCa0ll7uK8"
+    }
+  ],
+  "orders": [
+    {
+      "id": "byuTyTFjUso",
+      "orderId": "ORD-2026-000004",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "3",
+          "title": "Blue Jeans Women",
+          "price": 1200000,
+          "categoryId": 1,
+          "typeId": 2,
+          "isSale": false,
+          "image": "/cloths/3.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 1200000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 1250000
+      },
+      "payment": {
+        "method": "online",
+        "status": "paid",
+        "transactionId": null
+      },
+      "orderStatus": "processing",
+      "createdAt": "2026-05-24T15:39:30.060Z",
+      "updatedAt": "2026-05-24T15:39:30.060Z"
+    },
+    {
+      "id": "OMRmg8LVHNY",
+      "orderId": "ORD-2026-000005",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "3",
+          "title": "Blue Jeans Women",
+          "price": 1200000,
+          "categoryId": 1,
+          "typeId": 2,
+          "isSale": false,
+          "image": "/cloths/3.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 1200000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 1250000
+      },
+      "payment": {
+        "method": "online",
+        "status": "pending",
+        "transactionId": null
+      },
+      "orderStatus": "draft",
+      "createdAt": "2026-05-24T15:41:05.504Z",
+      "updatedAt": "2026-05-24T15:41:05.504Z"
+    },
+    {
+      "id": "zjwdtox059I",
+      "orderId": "ORD-2026-000006",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "5",
+          "title": "Women Jacket Autumn",
+          "price": 1800000,
+          "categoryId": 1,
+          "typeId": 4,
+          "isSale": false,
+          "image": "/cloths/5.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 1800000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 1850000
+      },
+      "payment": {
+        "method": "online",
+        "status": "pending",
+        "transactionId": null
+      },
+      "orderStatus": "draft",
+      "createdAt": "2026-05-24T15:48:19.701Z",
+      "updatedAt": "2026-05-24T15:48:19.701Z"
+    },
+    {
+      "id": "xAAgA1fDAUA",
+      "orderId": "ORD-2026-000007",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "5",
+          "title": "Women Jacket Autumn",
+          "price": 1800000,
+          "categoryId": 1,
+          "typeId": 4,
+          "isSale": false,
+          "image": "/cloths/5.png",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "title": "Black Men T-Shirt",
+          "price": 480000,
+          "categoryId": 2,
+          "typeId": 1,
+          "isSale": true,
+          "image": "/cloths/2.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 2280000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 2330000
+      },
+      "payment": {
+        "method": "online",
+        "status": "pending",
+        "transactionId": null
+      },
+      "orderStatus": "draft",
+      "createdAt": "2026-05-24T19:53:21.272Z",
+      "updatedAt": "2026-05-24T19:53:21.272Z"
+    },
+    {
+      "id": "zjwdtox059I",
+      "orderId": "ORD-2026-000006",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "5",
+          "title": "Women Jacket Autumn",
+          "price": 1800000,
+          "categoryId": 1,
+          "typeId": 4,
+          "isSale": false,
+          "image": "/cloths/5.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 1800000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 1850000
+      },
+      "payment": {
+        "method": "online",
+        "status": "pending",
+        "transactionId": null
+      },
+      "orderStatus": "draft",
+      "createdAt": "2026-05-24T15:48:19.701Z",
+      "updatedAt": "2026-05-24T15:48:19.701Z"
+    },
+    {
+      "id": "xAAgA1fDAUA",
+      "orderId": "ORD-2026-000007",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "5",
+          "title": "Women Jacket Autumn",
+          "price": 1800000,
+          "categoryId": 1,
+          "typeId": 4,
+          "isSale": false,
+          "image": "/cloths/5.png",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "title": "Black Men T-Shirt",
+          "price": 480000,
+          "categoryId": 2,
+          "typeId": 1,
+          "isSale": true,
+          "image": "/cloths/2.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 2280000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 2330000
+      },
+      "payment": {
+        "method": "online",
+        "status": "pending",
+        "transactionId": null
+      },
+      "orderStatus": "draft",
+      "createdAt": "2026-05-24T19:53:21.272Z",
+      "updatedAt": "2026-05-24T19:53:21.272Z"
+    },
+    {
+      "id": "zjwdtox059I",
+      "orderId": "ORD-2026-000006",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "5",
+          "title": "Women Jacket Autumn",
+          "price": 1800000,
+          "categoryId": 1,
+          "typeId": 4,
+          "isSale": false,
+          "image": "/cloths/5.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 1800000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 1850000
+      },
+      "payment": {
+        "method": "online",
+        "status": "pending",
+        "transactionId": null
+      },
+      "orderStatus": "draft",
+      "createdAt": "2026-05-24T15:48:19.701Z",
+      "updatedAt": "2026-05-24T15:48:19.701Z"
+    },
+    {
+      "id": "xAAgA1fDAUA",
+      "orderId": "ORD-2026-000007",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "5",
+          "title": "Women Jacket Autumn",
+          "price": 1800000,
+          "categoryId": 1,
+          "typeId": 4,
+          "isSale": false,
+          "image": "/cloths/5.png",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "title": "Black Men T-Shirt",
+          "price": 480000,
+          "categoryId": 2,
+          "typeId": 1,
+          "isSale": true,
+          "image": "/cloths/2.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 2280000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 2330000
+      },
+      "payment": {
+        "method": "online",
+        "status": "pending",
+        "transactionId": null
+      },
+      "orderStatus": "draft",
+      "createdAt": "2026-05-24T19:53:21.272Z",
+      "updatedAt": "2026-05-24T19:53:21.272Z"
+    },
+    {
+      "id": "zjwdtox059I",
+      "orderId": "ORD-2026-000006",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "5",
+          "title": "Women Jacket Autumn",
+          "price": 1800000,
+          "categoryId": 1,
+          "typeId": 4,
+          "isSale": false,
+          "image": "/cloths/5.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 1800000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 1850000
+      },
+      "payment": {
+        "method": "online",
+        "status": "pending",
+        "transactionId": null
+      },
+      "orderStatus": "draft",
+      "createdAt": "2026-05-24T15:48:19.701Z",
+      "updatedAt": "2026-05-24T15:48:19.701Z"
+    },
+    {
+      "id": "xAAgA1fDAUA",
+      "orderId": "ORD-2026-000007",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "5",
+          "title": "Women Jacket Autumn",
+          "price": 1800000,
+          "categoryId": 1,
+          "typeId": 4,
+          "isSale": false,
+          "image": "/cloths/5.png",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "title": "Black Men T-Shirt",
+          "price": 480000,
+          "categoryId": 2,
+          "typeId": 1,
+          "isSale": true,
+          "image": "/cloths/2.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 2280000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 2330000
+      },
+      "payment": {
+        "method": "online",
+        "status": "pending",
+        "transactionId": null
+      },
+      "orderStatus": "draft",
+      "createdAt": "2026-05-24T19:53:21.272Z",
+      "updatedAt": "2026-05-24T19:53:21.272Z"
+    },
+    {
+      "id": "zjwdtox059I",
+      "orderId": "ORD-2026-000006",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "5",
+          "title": "Women Jacket Autumn",
+          "price": 1800000,
+          "categoryId": 1,
+          "typeId": 4,
+          "isSale": false,
+          "image": "/cloths/5.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 1800000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 1850000
+      },
+      "payment": {
+        "method": "online",
+        "status": "pending",
+        "transactionId": null
+      },
+      "orderStatus": "draft",
+      "createdAt": "2026-05-24T15:48:19.701Z",
+      "updatedAt": "2026-05-24T15:48:19.701Z"
+    },
+    {
+      "id": "xAAgA1fDAUA",
+      "orderId": "ORD-2026-000007",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "name": "vahid",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "5",
+          "title": "Women Jacket Autumn",
+          "price": 1800000,
+          "categoryId": 1,
+          "typeId": 4,
+          "isSale": false,
+          "image": "/cloths/5.png",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "title": "Black Men T-Shirt",
+          "price": 480000,
+          "categoryId": 2,
+          "typeId": 1,
+          "isSale": true,
+          "image": "/cloths/2.png",
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": 2,
+        "provinceName": "آذربایجان غربی",
+        "cityName": "ارومیه",
+        "cityId": 1,
+        "address": "کوچه ده کاشانی"
+      },
+      "pricing": {
+        "itemsTotal": 2280000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 2330000
+      },
+      "payment": {
+        "method": "online",
+        "status": "pending",
+        "transactionId": null
+      },
+      "orderStatus": "draft",
+      "createdAt": "2026-05-24T19:53:21.272Z",
+      "updatedAt": "2026-05-24T19:53:21.272Z"
+    },
+    {
+      "id": "GR3QoWj_KvI",
+      "orderId": "ORD-2026-000013",
+      "customer": {
+        "id": "hvtkKe_Fr_8",
+        "tel": "09364812065"
+      },
+      "items": [
+        {
+          "id": "5",
+          "title": "Women Autumn Jacket",
+          "price": 2290000,
+          "categoryId": 1,
+          "typeId": 4,
+          "isSale": false,
+          "image": "/cloths/5.png",
+          "brand": "Urban Wear",
+          "description": "Stylish lightweight jacket perfect for autumn weather.",
+          "rating": 4.6,
+          "reviewCount": 142,
+          "stock": 10,
+          "colors": [
+            "Brown",
+            "Beige"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L"
+          ],
+          "qty": 1
+        }
+      ],
+      "shippingAddress": {
+        "provinceId": "15",
+        "provinceName": "سمنان",
+        "countyId": "3",
+        "countyName": "دامغان",
+        "address": "کوچه گل نسترن واحد 7"
+      },
+      "pricing": {
+        "itemsTotal": 2290000,
+        "shippingCost": 50000,
+        "discount": 0,
+        "finalTotal": 2340000
+      },
+      "payment": {
+        "method": "online",
+        "status": "paid",
+        "transactionId": null
+      },
+      "orderStatus": "processing",
+      "createdAt": "2026-06-28T21:06:33.761Z",
+      "updatedAt": "2026-06-28T21:06:47.106Z"
+    }
+  ],
+  "provinces": [
+    {
+      "id": "1",
+      "name": "آذربایجان شرقی",
+      "value": "east-azerbaijan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "تبریز",
+          "value": "tabriz"
+        },
+        {
+          "id": 2,
+          "name": "مراغه",
+          "value": "maragheh"
+        },
+        {
+          "id": 3,
+          "name": "مرند",
+          "value": "marand"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "آذربایجان غربی",
+      "value": "west-azerbaijan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "ارومیه",
+          "value": "urmia"
+        },
+        {
+          "id": 2,
+          "name": "خوی",
+          "value": "khoy"
+        },
+        {
+          "id": 3,
+          "name": "مهاباد",
+          "value": "mahabad"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "اردبیل",
+      "value": "ardabil",
+      "counties": [
+        {
+          "id": 1,
+          "name": "اردبیل",
+          "value": "ardabil"
+        },
+        {
+          "id": 2,
+          "name": "پارس آباد",
+          "value": "pars-abad"
+        },
+        {
+          "id": 3,
+          "name": "مشگین شهر",
+          "value": "meshgin-shahr"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "اصفهان",
+      "value": "isfahan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "اصفهان",
+          "value": "isfahan"
+        },
+        {
+          "id": 2,
+          "name": "کاشان",
+          "value": "kashan"
+        },
+        {
+          "id": 3,
+          "name": "نجف آباد",
+          "value": "najafabad"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "البرز",
+      "value": "alborz",
+      "counties": [
+        {
+          "id": 1,
+          "name": "کرج",
+          "value": "karaj"
+        },
+        {
+          "id": 2,
+          "name": "نظرآباد",
+          "value": "nazarabad"
+        },
+        {
+          "id": 3,
+          "name": "طالقان",
+          "value": "taleqan"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "ایلام",
+      "value": "ilam",
+      "counties": [
+        {
+          "id": 1,
+          "name": "ایلام",
+          "value": "ilam"
+        },
+        {
+          "id": 2,
+          "name": "دهلران",
+          "value": "dehloran"
+        },
+        {
+          "id": 3,
+          "name": "آبدانان",
+          "value": "abdanan"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "بوشهر",
+      "value": "bushehr",
+      "counties": [
+        {
+          "id": 1,
+          "name": "بوشهر",
+          "value": "bushehr"
+        },
+        {
+          "id": 2,
+          "name": "دشتستان",
+          "value": "dashtestan"
+        },
+        {
+          "id": 3,
+          "name": "گناوه",
+          "value": "genaveh"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "تهران",
+      "value": "tehran",
+      "counties": [
+        {
+          "id": 1,
+          "name": "تهران",
+          "value": "tehran"
+        },
+        {
+          "id": 2,
+          "name": "ری",
+          "value": "rey"
+        },
+        {
+          "id": 3,
+          "name": "اسلامشهر",
+          "value": "eslamshahr"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "چهارمحال و بختیاری",
+      "value": "chaharmahal-bakhtiari",
+      "counties": [
+        {
+          "id": 1,
+          "name": "شهرکرد",
+          "value": "shahrekord"
+        },
+        {
+          "id": 2,
+          "name": "بروجن",
+          "value": "borujen"
+        },
+        {
+          "id": 3,
+          "name": "فارسان",
+          "value": "farsan"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "خراسان جنوبی",
+      "value": "south-khorasan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "بیرجند",
+          "value": "birjand"
+        },
+        {
+          "id": 2,
+          "name": "قائن",
+          "value": "ghaen"
+        },
+        {
+          "id": 3,
+          "name": "فردوس",
+          "value": "ferdows"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "خراسان رضوی",
+      "value": "razavi-khorasan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "مشهد",
+          "value": "mashhad"
+        },
+        {
+          "id": 2,
+          "name": "نیشابور",
+          "value": "neyshabur"
+        },
+        {
+          "id": 3,
+          "name": "سبزوار",
+          "value": "sabzevar"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "خراسان شمالی",
+      "value": "north-khorasan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "بجنورد",
+          "value": "bojnord"
+        },
+        {
+          "id": 2,
+          "name": "شیروان",
+          "value": "shirvan"
+        },
+        {
+          "id": 3,
+          "name": "اسفراین",
+          "value": "esfarayen"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "خوزستان",
+      "value": "khuzestan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "اهواز",
+          "value": "ahvaz"
+        },
+        {
+          "id": 2,
+          "name": "آبادان",
+          "value": "abadan"
+        },
+        {
+          "id": 3,
+          "name": "دزفول",
+          "value": "dezful"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "زنجان",
+      "value": "zanjan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "زنجان",
+          "value": "zanjan"
+        },
+        {
+          "id": 2,
+          "name": "ابهر",
+          "value": "abhar"
+        },
+        {
+          "id": 3,
+          "name": "خرمدره",
+          "value": "khorramdareh"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "سمنان",
+      "value": "semnan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "سمنان",
+          "value": "semnan"
+        },
+        {
+          "id": 2,
+          "name": "شاهرود",
+          "value": "shahroud"
+        },
+        {
+          "id": 3,
+          "name": "دامغان",
+          "value": "damghan"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "سیستان و بلوچستان",
+      "value": "sistan-baluchestan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "زاهدان",
+          "value": "zahedan"
+        },
+        {
+          "id": 2,
+          "name": "چابهار",
+          "value": "chabahar"
+        },
+        {
+          "id": 3,
+          "name": "ایرانشهر",
+          "value": "iranshahr"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "فارس",
+      "value": "fars",
+      "counties": [
+        {
+          "id": 1,
+          "name": "شیراز",
+          "value": "shiraz"
+        },
+        {
+          "id": 2,
+          "name": "مرودشت",
+          "value": "marvdasht"
+        },
+        {
+          "id": 3,
+          "name": "لار",
+          "value": "lar"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "name": "قزوین",
+      "value": "qazvin",
+      "counties": [
+        {
+          "id": 1,
+          "name": "قزوین",
+          "value": "qazvin"
+        },
+        {
+          "id": 2,
+          "name": "تاکستان",
+          "value": "takestan"
+        },
+        {
+          "id": 3,
+          "name": "آبیک",
+          "value": "abyek"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "name": "قم",
+      "value": "qom",
+      "counties": [
+        {
+          "id": 1,
+          "name": "قم",
+          "value": "qom"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "name": "کردستان",
+      "value": "kurdistan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "سنندج",
+          "value": "sanandaj"
+        },
+        {
+          "id": 2,
+          "name": "سقز",
+          "value": "saqqez"
+        },
+        {
+          "id": 3,
+          "name": "بانه",
+          "value": "baneh"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "name": "کرمان",
+      "value": "kerman",
+      "counties": [
+        {
+          "id": 1,
+          "name": "کرمان",
+          "value": "kerman"
+        },
+        {
+          "id": 2,
+          "name": "رفسنجان",
+          "value": "rafsanjan"
+        },
+        {
+          "id": 3,
+          "name": "جیرفت",
+          "value": "jiroft"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "name": "کرمانشاه",
+      "value": "kermanshah",
+      "counties": [
+        {
+          "id": 1,
+          "name": "کرمانشاه",
+          "value": "kermanshah"
+        },
+        {
+          "id": 2,
+          "name": "اسلام آباد غرب",
+          "value": "eslamabad-gharv"
+        },
+        {
+          "id": 3,
+          "name": "سنقر",
+          "value": "sonqor"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "name": "کهگیلویه و بویراحمد",
+      "value": "kohgiluyeh-boyerahmad",
+      "counties": [
+        {
+          "id": 1,
+          "name": "یاسوج",
+          "value": "yasuj"
+        },
+        {
+          "id": 2,
+          "name": "گچساران",
+          "value": "gachsaran"
+        },
+        {
+          "id": 3,
+          "name": "دهدشت",
+          "value": "dehdasht"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "name": "گلستان",
+      "value": "golestan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "گرگان",
+          "value": "gorgan"
+        },
+        {
+          "id": 2,
+          "name": "گنبدکاووس",
+          "value": "gonbad-kavous"
+        },
+        {
+          "id": 3,
+          "name": "علی آباد",
+          "value": "aliabad"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "name": "گیلان",
+      "value": "gilan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "رشت",
+          "value": "rasht"
+        },
+        {
+          "id": 2,
+          "name": "انزلی",
+          "value": "anzali"
+        },
+        {
+          "id": 3,
+          "name": "لاهیجان",
+          "value": "lahijan"
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "name": "لرستان",
+      "value": "lorestan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "خرم آباد",
+          "value": "khorramabad"
+        },
+        {
+          "id": 2,
+          "name": "بروجرد",
+          "value": "borujerd"
+        },
+        {
+          "id": 3,
+          "name": "دورود",
+          "value": "dorud"
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "name": "مازندران",
+      "value": "mazandaran",
+      "counties": [
+        {
+          "id": 1,
+          "name": "ساری",
+          "value": "sari"
+        },
+        {
+          "id": 2,
+          "name": "بابل",
+          "value": "babol"
+        },
+        {
+          "id": 3,
+          "name": "آمل",
+          "value": "amol"
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "name": "مرکزی",
+      "value": "markazi",
+      "counties": [
+        {
+          "id": 1,
+          "name": "اراک",
+          "value": "arak"
+        },
+        {
+          "id": 2,
+          "name": "ساوه",
+          "value": "saveh"
+        },
+        {
+          "id": 3,
+          "name": "خمین",
+          "value": "khomein"
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "name": "هرمزگان",
+      "value": "hormozgan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "بندرعباس",
+          "value": "bandar-abbas"
+        },
+        {
+          "id": 2,
+          "name": "قشم",
+          "value": "qeshm"
+        },
+        {
+          "id": 3,
+          "name": "کیش",
+          "value": "kish"
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "name": "همدان",
+      "value": "hamedan",
+      "counties": [
+        {
+          "id": 1,
+          "name": "همدان",
+          "value": "hamedan"
+        },
+        {
+          "id": 2,
+          "name": "ملایر",
+          "value": "malayer"
+        },
+        {
+          "id": 3,
+          "name": "نهاوند",
+          "value": "nahavand"
+        }
+      ]
+    },
+    {
+      "id": "31",
+      "name": "یزد",
+      "value": "yazd",
+      "counties": [
+        {
+          "id": 1,
+          "name": "یزد",
+          "value": "yazd"
+        },
+        {
+          "id": 2,
+          "name": "میبد",
+          "value": "meybod"
+        },
+        {
+          "id": 3,
+          "name": "اردکان",
+          "value": "ardakan"
+        }
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
