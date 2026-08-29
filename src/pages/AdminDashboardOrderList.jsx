@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import {BASE_URL} from "../config.js"
 import {
   useReactTable,
   getCoreRowModel,
@@ -31,7 +32,7 @@ const AdminDashboardOrderList = () => {
   const pageSize = 5;
 
   useEffect(() => {
-    let url = `http://localhost:3000/orders?_page=${page}&_per_page=${pageSize}`;
+    let url = `${BASE_URL}/orders?_page=${page}&_per_page=${pageSize}`;
     
     if (activeTab !== "All") {
       url += `&orderStatus=${activeTab}`;
@@ -49,7 +50,7 @@ const AdminDashboardOrderList = () => {
       })
       .catch((err) => console.error(err));
 
-      let statsurl=`http://localhost:3000/orders`
+      let statsurl=`${BASE_URL}/orders`
 
       if(customerId)
         statsurl += `?&customer.id=${customerId}`

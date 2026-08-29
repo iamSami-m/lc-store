@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {  Upload } from 'lucide-react';
+import {BASE_URL} from "../config.js"
 
 const AddItem = ({data}) => {
   const [formData,setFormData]=useState({
@@ -42,7 +43,7 @@ const AddItem = ({data}) => {
       ]
   };
 
-    await fetch("http://localhost:3000/products",
+    await fetch(`${BASE_URL}/products`,
       {
         method:"POST",
         headers: {

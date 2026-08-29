@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { OrderContext } from "../context/OrderContext";
+import {BASE_URL} from "../config.js"
 
 const PaymentPage = () => {
   const [ order, setOrder ] = useState([]);
@@ -9,7 +10,7 @@ const PaymentPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-  fetch(`http://localhost:3000/orders/${id}`)
+  fetch(`${BASE_URL}s/orders/${id}`)
     .then(res => res.json())
     .then(data => setOrder(data))
 }, [id])
@@ -18,7 +19,7 @@ console.log("id:", id)
 console.log("order:", order)
   const handleSuccess = async () => {
     try {
-      await fetch(`http://localhost:3000/orders/${order.id}`, {
+      await fetch(`${BASE_URL}/orders/${order.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +52,7 @@ console.log("order:", order)
 
   const handleFail = async () => {
     try {
-      await fetch(`http://localhost:3000/orders/${order.id}`, {
+      await fetch(`${BASE_URL}/orders/${order.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

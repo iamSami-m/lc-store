@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { MapPinCheckInside,Trash2,Pencil,Plus } from 'lucide-react';
 import {useAddresses,useCreateAddress,useDeleteAddress,useUpdateAddress} from '../services/address.services'
 import AddressSchema from '../schemas/AddressSchema'
+import {BASE_URL} from "../config.js"
 
 const UserAddresses = () => {
   const {id}=JSON.parse(localStorage.getItem("user"))
@@ -23,7 +24,7 @@ const UserAddresses = () => {
   
   
   useEffect(()=>{
-    fetch("http://localhost:3000/provinces")
+    fetch(`${BASE_URL}/provinces`)
     .then(res=>res.json())
     .then(data=>setAllProvinces(data))
   },[])
@@ -34,7 +35,7 @@ const UserAddresses = () => {
     setNewProvince(provinceId)
     console.log("newprovince:",newProvince)
 
-    const data=await fetch(`http://localhost:3000/provinces/${provinceId}`)
+    const data=await fetch(`${BASE_URL}/provinces/${provinceId}`)
     .then(res=>res.json())
     
     setAllCounties(data.counties)
@@ -89,7 +90,7 @@ const UserAddresses = () => {
   setPostalCode(address.postalCode);
 
   const data = await fetch(
-    `http://localhost:3000/provinces/${address.provinceId}`
+    `${BASE_URL}/provinces/${address.provinceId}`
   ).then(res => res.json());
   console.log("provinceId:",address.provinceId)
   setAllCounties(data.counties);

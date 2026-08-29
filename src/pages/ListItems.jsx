@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Trash, Pencil, Upload, X } from "lucide-react";
+import {BASE_URL} from "../config.js"
 
 const ListItems = () => {
   const [productList, setProductList] = useState([]);
@@ -13,9 +14,9 @@ const ListItems = () => {
     try {
       //Promise.all باعث می‌شود هر سه درخواست همزمان ارسال شوند
       const [products, categories, types]=await Promise.all([
-        fetch("http://localhost:3000/products").then((res) => res.json()),
-        fetch("http://localhost:3000/categories").then((res) => res.json()),
-        fetch("http://localhost:3000/types").then((res) => res.json()),
+        fetch(`${BASE_URL}/products`).then((res) => res.json()),
+        fetch(`${BASE_URL}/categories`).then((res) => res.json()),
+        fetch(`${BASE_URL}/types`).then((res) => res.json()),
       ])
         setProductList(products);
         setCategories(categories);
@@ -42,7 +43,7 @@ const ListItems = () => {
     types.find((t) => Number(t.id) === Number(id))?.name || "ندارد";
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:3000/products/${id}`, {
+    fetch(`${BASE_URL}/products/${id}`, {
       method: "DELETE",
     }).then(() => {
       setProductList((prev) => prev.filter((p) => p.id !== id));
@@ -63,7 +64,7 @@ const ListItems = () => {
 
   const handleSubmit =async (e, id) => {
     e.preventDefault();
-    const response=await fetch(`http://localhost:3000/products/${id}`, {
+    const response=await fetch(`${BASE_URL}/products/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

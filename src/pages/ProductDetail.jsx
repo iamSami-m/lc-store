@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { useSearchParams } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import {BASE_URL} from "../config.js"
 
 export default function ProductDetails() {
   const [searchParams] = useSearchParams();
@@ -12,7 +13,7 @@ export default function ProductDetails() {
   useEffect(() => {
     if (!productId) return;
 
-    fetch(`http://localhost:3000/products/${productId}`)
+    fetch(`${BASE_URL}/products/${productId}`)
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((err) => console.log(err));

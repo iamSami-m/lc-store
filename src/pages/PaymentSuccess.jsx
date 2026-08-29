@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { OrderContext } from '../context/OrderContext'
+import {BASE_URL} from "../config.js"
 
 const PaymentSuccess = () => {
   const {order,setOrder}=useContext(OrderContext)
@@ -17,7 +18,7 @@ const PaymentSuccess = () => {
       orderStatus:"پرداخت شده"
     }
     setOrder(updatOrder)
-    fetch("http://localhost:3000/orders",{
+    fetch(`${BASE_URL}/orders`,{
           method:"Post",
           headers: {
             "Content-Type": "application/json"

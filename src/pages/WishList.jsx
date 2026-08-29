@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {BASE_URL} from "../config.js"
 
 const WishList = () => {
   const [wishlist,setWishList]=useState([])
@@ -6,11 +7,11 @@ const WishList = () => {
 
   useEffect(()=>{
     const loadWishes=async ()=>{
-      const wishlistProductIds=await fetch(`http://localhost:3000/wishlists?userId=${id}`)
+      const wishlistProductIds=await fetch(`${BASE_URL}/wishlists?userId=${id}`)
       .then(res=>res.json())
     console.log(wishlistProductIds)
 
-    const products=await fetch("http://localhost:3000/products")
+    const products=await fetch(`${BASE_URL}/products`)
       .then(res=>res.json())
       
     const wishListProducts=products.filter(product=>
@@ -32,7 +33,7 @@ const WishList = () => {
   },[])
 
   const handleDelete=async(id)=>{
-   await fetch(`http://localhost:3000/wishlists/${id}`,{
+   await fetch(`${BASE_URL}/wishlists/${id}`,{
       method:"DELETE",
       headers:{'Content-Type':'application/json'},
     })

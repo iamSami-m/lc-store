@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {BASE_URL} from "../config.js"
 
 const Orders = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Orders = () => {
   const id = user?.id;
 
   useEffect(() => {
-    fetch("http://localhost:3000/orders")
+    fetch(`${BASE_URL}/orders`)
       .then((res) => res.json())
       .then((data) => {
         const userOrders = data.filter(

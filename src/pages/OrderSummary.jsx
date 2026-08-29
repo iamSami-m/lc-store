@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { OrderContext } from '../context/OrderContext'
+import {BASE_URL} from "../config.js"
 import { Navigate, NavLink, useLocation, useNavigate,useParams, useSearchParams } from 'react-router-dom'
 
 const OrderSummary = () => {
@@ -15,7 +16,7 @@ const OrderSummary = () => {
 
   const navigate=useNavigate()
   useEffect(()=>{
-    fetch(`http://localhost:3000/orders/${id}`)
+    fetch(`${BASE_URL}/orders/${id}`)
     .then(res=>res.json())
     .then(data=>{
       console.log(data)
@@ -44,7 +45,7 @@ const OrderSummary = () => {
   
 
   const handleOrderChanges=async ()=>{
-    await fetch(`http://localhost:3000/orders/${id}`,{
+    await fetch(`${BASE_URL}/orders/${id}`,{
       method:"PATCH",
       headers:{
         "Content-Type":"application/json"

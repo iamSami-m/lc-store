@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {BASE_URL} from "./../config.js"
 
 export default function Home() {
   
@@ -7,7 +8,7 @@ export default function Home() {
   const Navigate=useNavigate();
 
   useEffect(()=>{
-    fetch("http://localhost:3000/categories")
+    fetch(`${BASE_URL}/categories`)
       .then((res)=>res.json())
       .then((data)=>setCategory(data))
   },[])

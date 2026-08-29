@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
+import {BASE_URL} from "../config.js"
 
 export default function Products() {
   const [searchParams] = useSearchParams();
@@ -12,7 +13,7 @@ export default function Products() {
 console.log("categoryId",categoryId)
   useEffect(() => {
   const fetchProducts=async ()=>{
-    const products=await fetch("http://localhost:3000/products")
+    const products=await fetch(`${BASE_URL}/products`)
     .then(res=>res.json())
     let result = products
     if(categoryId && categoryId!=="8")

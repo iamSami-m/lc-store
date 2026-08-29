@@ -4,6 +4,7 @@ import { CartContext } from '../context/CartContext'
 import { Trash2, CirclePlus, CircleMinus } from 'lucide-react'
 import { OrderContext } from '../context/OrderContext'
 import { UserContext } from '../context/UserContext'
+import {BASE_URL} from "../config.js"
 
 
 const Checkout = () => {
@@ -40,7 +41,7 @@ const cityData= provinceData?.counties?.find(
 
   // 🔥 مشترک برای لود استان + شهر
   const loadProvinceData = async (provinceId, countyId = null) => {
-    const res = await fetch(`http://localhost:3000/provinces/${provinceId}`)
+    const res = await fetch(`${BASE_URL}/provinces/${provinceId}`)
     const data = await res.json()
 
     setCities(data.counties)
@@ -55,13 +56,13 @@ const cityData= provinceData?.counties?.find(
   useEffect(() => {
 
     // provinces list
-    fetch("http://localhost:3000/provinces")
+    fetch(`${BASE_URL}/provinces`)
       .then(res => res.json())
       .then(data => setProvinces(data))
 
        if (!id) return;
     // user address
-    fetch(`http://localhost:3000/addresses?userId=${id}`)
+    fetch(`${BASE_URL}/addresses?userId=${id}`)
       .then(res => res.json())
       .then(async (data) => {
 
@@ -92,7 +93,7 @@ const cityData= provinceData?.counties?.find(
 
  // گرفتن همه سفارش‌ها از دیتابیس
  const res = await fetch(
-   "http://localhost:3000/orders"
+   `${BASE_URL}/orders`
  )
 
  // تبدیل پاسخ به آرایه سفارش‌ها
@@ -147,7 +148,7 @@ const cityData= provinceData?.counties?.find(
   shippingCost -
   discount
   const orderId=await generateOrderId()
-  const res=await fetch("http://localhost:3000/orders",{
+  const res=await fetch(`${BASE_URL}/orders`,{
     method:"POST",
     headers: {
     "Content-Type": "application/json"

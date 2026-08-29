@@ -1,4 +1,5 @@
 import {useMutation,useQueryClient, useQuery, Mutation} from '@tanstack/react-query'
+import {BASE_URL} from "../config.js"
 
 
 export const useAddresses = (userId) => {
@@ -7,11 +8,11 @@ export const useAddresses = (userId) => {
 
     queryFn: async () => {
       const addresses = await fetch(
-        `http://localhost:3000/addresses?userId=${userId}`
+        `${BASE_URL}/addresses?userId=${userId}`
       ).then((res) => res.json());
 
       const provinces = await fetch(
-        "http://localhost:3000/provinces"
+        `${BASE_URL}/provinces`
       ).then((res) => res.json());
 
       const userAddresses = addresses.map((address) => {
@@ -41,7 +42,7 @@ export const useUpdateAddress=()=>{
 
   return useMutation({
     mutationFn:async ({id,newAddress})=>{
-      const res=await fetch(`http://localhost:3000/addresses/${id}`,
+      const res=await fetch(`${BASE_URL}/addresses/${id}`,
         {
           method:"PATCH",
           headers:{"Content-Type":"application/json"},
@@ -64,7 +65,7 @@ export const useCreateAddress = () => {
   return useMutation({
     mutationFn: async (newAddress) => {
       const res = await fetch(
-        "http://localhost:3000/addresses",
+        `${BASE_URL}/addresses`,
         {
           method: "POST",
           headers: {
@@ -101,7 +102,7 @@ export const useDeleteAddress=()=>{
   return useMutation({
     mutationFn: async (id)=>{
       const res=await fetch(
-        `http://localhost:3000/addresses/${id}`,{
+        `${BASE_URL}/addresses/${id}`,{
           method:"DELETE",
           
         }

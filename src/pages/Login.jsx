@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import LoginSchema from '../schemas/LoginSchema'
 import {UserContext} from './../context/UserContext'
+import {BASE_URL} from "../config.js"
 
 export default function Auth() {
   const [userState, setUserState] = useState("Login")
@@ -38,7 +39,7 @@ export default function Auth() {
       if (userState === "Sign Up") {
 
         // چک کاربر تکراری
-        const check = await fetch(`http://localhost:5000/users?tel=${formData.tel}`)
+        const check = await fetch(`${BASE_URL}/users?tel=${formData.tel}`)
         const existingUser = await check.json()
 
         if (existingUser.length > 0) {
@@ -47,7 +48,7 @@ export default function Auth() {
           return
         }
 
-        const res = await fetch("http://localhost:5000/users", {
+        const res = await fetch(`${BASE_URL}/users`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -73,7 +74,7 @@ export default function Auth() {
       // LOGIN
       else {
         const res = await fetch(
-          `http://localhost:5000/users?tel=${formData.tel}&password=${formData.password}`
+          `${BASE_URL}/users?tel=${formData.tel}&password=${formData.password}`
         )
 
         const data = await res.json()

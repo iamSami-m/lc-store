@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import LoginSchema from './../schemas/LoginSchema'
 import SignUpSchema from './../schemas/SignUpSchema'
 import { UserContext } from '../context/UserContext'
+import {BASE_URL} from "../config.js"
 
 export default function Auth() {
   const [userState, setUserState] = useState("Login")
@@ -51,7 +52,7 @@ export default function Auth() {
         return
       }
         // چک کاربر تکراری
-        const check = await fetch(`http://localhost:3000/users?tel=${formData.tel}`)
+        const check = await fetch(`${BASE_URL}/users?tel=${formData.tel}`)
         const existingUser = await check.json()
 
         if (existingUser.length > 0) {
@@ -60,7 +61,7 @@ export default function Auth() {
           return
         }
 
-        const res = await fetch("http://localhost:3000/users", {
+        const res = await fetch(`${BASE_URL}/users`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -98,7 +99,7 @@ export default function Auth() {
         return
       }
         
-        const res = await fetch("http://localhost:3000/users")
+        const res = await fetch(`${BASE_URL}/users`)
         const users = await res.json()
         console.log("users:",users)
         const user = users.find(u =>

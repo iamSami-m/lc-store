@@ -1,4 +1,5 @@
 import {useQuery,useMutation, useQueryClient} from '@tanstack/react-query'
+import {BASE_URL} from "../config.js"
 
 
 export const useGetAllCustomers=()=>{
@@ -8,7 +9,7 @@ export const useGetAllCustomers=()=>{
     return useQuery({
         queryKey:['customers'],
         queryFn: async ()=>{
-            const res=await fetch('http://localhost:3000/users',{
+            const res=await fetch(`${BASE_URL}/users`,{
                 method:'GET'
             });
             if(!res.ok)
@@ -23,7 +24,7 @@ export const useCreateCustomer=()=>{
     const queryClient=useQueryClient();
     return useMutation({
         mutationFn:async (newCustomer)=>{
-            const res=await fetch("http://localhost:3000/users",
+            const res=await fetch(`${BASE_URL}/users`,
                 {
                     method:'POST',
                     headers:{'Content-Type':'application/json'},
@@ -51,7 +52,7 @@ export const useUpdateCustomer=()=>{
     const queryClient=useQueryClient();
     return useMutation({
         mutationFn:async ({id,updatedCustomer})=>{
-            const res=await fetch(`http://localhost:3000/users/${id}`,
+            const res=await fetch(`${BASE_URL}/users/${id}`,
                 {
                     method:'PATCH',
                     headers:{'Content-Type':'application/json'},
@@ -89,7 +90,7 @@ export const useUpdateCustomer=()=>{
         const queryClient=useQueryClient()
         return useMutation({
             mutationFn:async ({id,updatedPassword})=>{
-                const res=await fetch(`http://localhost:3000/users/${id}`,{
+                const res=await fetch(`${BASE_URL}/users/${id}`,{
                     method:'PATCH',
                     headers:{'Content-Type':'application/json'},
                     body:JSON.stringify(updatedPassword)
