@@ -6,12 +6,14 @@ const AddItem = ({data}) => {
     imageUrl:null,
     productName:"",
     productCat:"",
-    productType:""
+    productType:"",
+    productPrice:null,
+    productDiscription:null
   })
 
   
   const handleChange=(e)=>{
-    const {name,value,files,type}=e.target
+    const {name,value,files,type,price,discription}=e.target
     setFormData({
       ...formData,
       [name]:type==="file"?"/images/" + files[0].name:value
@@ -24,7 +26,20 @@ const AddItem = ({data}) => {
     title: formData.productName,
     categoryId: formData.productCat,
     typeId: formData.productType,
-    image: formData.imageUrl
+    image: formData.imageUrl,
+    price:formData.productPrice,
+    brand: "Prime Style",
+    description: formData.productDiscription,
+    stock: 15,
+    colors: [
+        "Gray",
+        "Black"
+      ],
+      sizes: [
+        "M",
+        "L",
+        "XL"
+      ]
   };
 
     await fetch("http://localhost:3000/products",
@@ -33,7 +48,7 @@ const AddItem = ({data}) => {
         headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(newProduct)
+      body: JSON.stringify(newProduct)
       }
     )
   }
@@ -45,6 +60,9 @@ const AddItem = ({data}) => {
         
         <label  className=''>نام محصول :  </label>
         <input required type="text" name="productName" id='name' value={formData.productName} className='bg-white my-4 py-2 w-90' onChange={handleChange}/>
+        
+        <label  className=''>قیمت:  </label>
+        <input required type="number" name="productPrice" id='price' value={formData.price} className='bg-white my-4 py-2 w-90' onChange={handleChange}/>
         
         <br />
         <label htmlFor="" className=' '>دسته بندی :  </label>
@@ -82,6 +100,9 @@ const AddItem = ({data}) => {
           <Upload/>
           <span>آپلود تصویر</span>
         </label>
+        <label  className=''>توصیف محصول:  </label>
+        <input required type="text" name="productDiscription" id='name' value={formData.productDiscription} className='bg-white my-4 py-2 w-90' onChange={handleChange}/>
+        
         <button type='submit' className='bg-white px-6 py-2 border-2 mt-8 w-90 mr-22'>ثبت</button>
       </form>
     </div>

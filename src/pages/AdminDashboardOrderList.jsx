@@ -32,7 +32,7 @@ const AdminDashboardOrderList = () => {
 
   useEffect(() => {
     let url = `http://localhost:3000/orders?_page=${page}&_per_page=${pageSize}`;
-
+    
     if (activeTab !== "All") {
       url += `&orderStatus=${activeTab}`;
     }
@@ -44,16 +44,15 @@ const AdminDashboardOrderList = () => {
     fetch(url)
       .then((res) => res.json())
       .then((result) => {
-        setOrders(result.data);
-        setTotalPages(result.pages);
-        
+        setOrders(result.userOrders);
+        setTotalPages(result.total);
       })
       .catch((err) => console.error(err));
 
-      let statsurl=`http://localhost:3000/orders?`
+      let statsurl=`http://localhost:3000/orders`
 
       if(customerId)
-        statsurl += `&customer.id=${customerId}`
+        statsurl += `?&customer.id=${customerId}`
       fetch(statsurl)
       .then(res=>res.json())
       .then(data=>setAllOrders(data))
@@ -82,10 +81,9 @@ const AdminDashboardOrderList = () => {
     //ولی نسبت به قبل بدون تغییر باشند دوباره اجرا نمی شود
     const filteredOrder=useMemo(()=>{
       const q=debouncedSearch.toLowerCase()
-
       return orders.filter(order=>
-        order.customer.name.toLowerCase().includes(q)||
-        order.customer.tel.includes(q) ||
+        order.customer.name?.toLowerCase().includes(q)||
+        order.customer.tel?.includes(q) ||
         order.orderId.toString().includes(q)
       )
     },[orders,debouncedSearch])

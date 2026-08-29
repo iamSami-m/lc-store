@@ -18,14 +18,17 @@ const OrderSummary = () => {
     fetch(`http://localhost:3000/orders/${id}`)
     .then(res=>res.json())
     .then(data=>{
-        setOrder(data)
-        setOrderStatus(data.orderStatus)
-        setPaymentStatus(data.payment.status)
+      console.log(data)
+        setOrder(data[0])
+        setOrderStatus(data[0].orderStatus)
+        setPaymentStatus(data[0].payment.status)
       })
   },[id])
   if (!order) {
     return <div>Loading...</div>
   }
+
+
 
   
   const handleBackToOrders=()=>{

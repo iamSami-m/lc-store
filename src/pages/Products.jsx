@@ -14,7 +14,6 @@ console.log("categoryId",categoryId)
   const fetchProducts=async ()=>{
     const products=await fetch("http://localhost:3000/products")
     .then(res=>res.json())
-
     let result = products
     if(categoryId && categoryId!=="8")
       result=products.filter(product=>String(product.categoryId)===categoryId)

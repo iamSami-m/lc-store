@@ -12,7 +12,7 @@ export default function Home() {
       .then((data)=>setCategory(data))
   },[])
 
-  console.log("categories",category)
+  
   const getProductByCategoryId=(categoryId)=>{
     if(categoryId===8)
       Navigate("/products")

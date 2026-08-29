@@ -89,7 +89,7 @@ export default function Auth() {
         try{
         
        validatedData = await LoginSchema.validate(formData, { abortEarly: false })
-       console.log("validated data", validatedData)
+       
      
       }
       catch(error){
@@ -129,7 +129,6 @@ export default function Auth() {
         } else {
           setMessage("شماره یا رمز اشتباه است ❌")
         }
-        console.log("local storage :", localStorage.getItem("user"))
       }
 
     } catch (error) {

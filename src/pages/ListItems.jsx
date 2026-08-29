@@ -6,23 +6,33 @@ const ListItems = () => {
   const [categories, setCategories] = useState([]);
   const [types, setTypes] = useState([]);
   const [editItem, setEditItem] = useState(null);
+  const [loading,setLoading]=useState(true)
+  
 
-  useEffect(() => {
-    fetch("http://localhost:3000/products")
-      .then((res) => res.json())
-      .then((data) => setProductList(data));
-  }, []);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/categories")
-      .then((res) => res.json())
-      .then((data) => setCategories(data));
-  }, []);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/types")
-      .then((res) => res.json())
-      .then((data) => setTypes(data));
+  const fetchData=async() => {
+    try {
+      //Promise.all باعث می‌شود هر سه درخواست همزمان ارسال شوند
+      const [products, categories, types]=await Promise.all([
+        fetch("http://localhost:3000/products").then((res) => res.json()),
+        fetch("http://localhost:3000/categories").then((res) => res.json()),
+        fetch("http://localhost:3000/types").then((res) => res.json()),
+      ])
+        setProductList(products);
+        setCategories(categories);
+        setTypes(types);
+    } catch (error) {
+      console.error(error);
+    }
+    finally{
+      setLoading(false);
+    }
+  
+      
+  
+        
+  }
+  useEffect(()=>{
+    fetchData();
   }, []);
 
   const getCategoryName = (id) =>
@@ -51,18 +61,23 @@ const ListItems = () => {
     }));
   };
 
-  const handleSubmit = (e, id) => {
+  const handleSubmit =async (e, id) => {
     e.preventDefault();
-
-    fetch(`http://localhost:3000/products/${id}`, {
-      method: "PATCH",
+    const response=await fetch(`http://localhost:3000/products/${id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(editItem),
-    });
+      
 
-    setEditItem(null);
+    });
+    if(response.ok){
+      await fetchData()
+      setEditItem(null);
+    }
+    
+    
   };
 
   return (
@@ -76,11 +91,13 @@ const ListItems = () => {
         <div>نوع</div>
         <div className="text-center">عملیات</div>
       </div>
-
+      {loading&&<p>...is loading</p>}
       {/* LIST */}
       <div className="space-y-4">
-
-        {productList.map((item) => (
+        
+        {
+        
+        productList.map((item) => (
           <div
             key={item.id}
             className="

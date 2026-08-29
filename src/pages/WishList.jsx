@@ -8,7 +8,7 @@ const WishList = () => {
     const loadWishes=async ()=>{
       const wishlistProductIds=await fetch(`http://localhost:3000/wishlists?userId=${id}`)
       .then(res=>res.json())
-    
+    console.log(wishlistProductIds)
 
     const products=await fetch("http://localhost:3000/products")
       .then(res=>res.json())
