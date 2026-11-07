@@ -1,10 +1,14 @@
 import * as Yup from 'yup'
 
-const LoginSchema=Yup.object({
-    name:Yup
+const SignUpSchema=Yup.object({
+    firstName:Yup
     .string()
     .min(3,'نام باید بیشتر از 3 کاراکتر باشد')
     .required('نام الزامی است'),
+    lastName:Yup
+    .string()
+    .min(3,'نام باید بیشتر از 3 کاراکتر باشد')
+    .required('نام  خانوادگی الزامی است'),
     email: Yup
     .string()
     .email("ایمیل معتبر نیست")
@@ -19,4 +23,4 @@ const LoginSchema=Yup.object({
 
 
 })
-export default LoginSchema
+export default SignUpSchema

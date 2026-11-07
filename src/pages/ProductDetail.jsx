@@ -1,14 +1,23 @@
 import { useEffect, useState, useContext } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import {BASE_URL} from "../config.js"
+import {
+  Heart,
+} from "lucide-react";
+import { UserContext } from "../context/UserContext.jsx";
 
 export default function ProductDetails() {
   const [searchParams] = useSearchParams();
   const productId = searchParams.get("id");
-
+  const heart = searchParams.get("heart");
+  const userWishId = searchParams.get("wishId");
+  const curentUser=JSON.parse(localStorage.getItem("user"))
   const [product, setProduct] = useState(null);
   const { addToCart } = useContext(CartContext);
+  const [isFaviorite,setIsFavorite]=useState(false)
+  const [wishId,setWishId]=useState(null)
+  const navigate=useNavigate()
 
   useEffect(() => {
     if (!productId) return;
@@ -17,6 +26,9 @@ export default function ProductDetails() {
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((err) => console.log(err));
+
+      setIsFavorite(heart)
+      setWishId(userWishId)
   }, [productId]);
 
   if (!product) {
@@ -26,14 +38,59 @@ export default function ProductDetails() {
       </div>
     );
   }
+  const handleAddToWishlist=async (productId)=>{
+    
+    if(isFaviorite){
+      const res=await fetch(`${BASE_URL}/wishlists/${wishId}`,{
+        method: 'DELETE',
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+       const data=await res.json()
+        
+      
+        setWishId(null)
+        setIsFavorite(false)
+    
 
+      
+      }
+    else{
+      if(!curentUser){
+        navigate('/Auth')
+      }
+      const curentUserId=curentUser.id
+      const res=await fetch(`${BASE_URL}/wishlists`,{
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          curentUserId,
+          productId
+        })
+      })
+      const data=await res.json()
+
+        setIsFavorite(true);
+        setWishId(data.wishId)
+      
+      
+      
+    }
+    
+    
+  }
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
           
           {/* تصویر محصول */}
-          <div className="flex justify-center items-center">
+          <div className="relative flex justify-center items-center ">
+          <Heart className={` absolute right-10 top-10 ${isFaviorite ? "text-red-500" : "test-gray-400" }`} onClick={()=>handleAddToWishlist(productId)}/>
+             
             <img
               src={product.image}
               alt={product.title}

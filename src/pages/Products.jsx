@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import {BASE_URL} from "../config.js"
 
+
 export default function Products() {
   const [searchParams] = useSearchParams();
   const [productsList, setProductList] = useState([]);
 
   const categoryId = searchParams.get("categoryId");
   const search=searchParams.get("search")
-  console.log("search:",search)
   const navigate = useNavigate();
-console.log("categoryId",categoryId)
   useEffect(() => {
   const fetchProducts=async ()=>{
     const products=await fetch(`${BASE_URL}/products`)
@@ -36,6 +35,7 @@ console.log("categoryId",categoryId)
     navigate(`productDetail?id=${itemId}`);
   };
 
+  
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <h1 className="text-2xl font-bold mb-8 text-center">
@@ -61,6 +61,7 @@ console.log("categoryId",categoryId)
                 flex justify-center items-center flex-col
               "
             >
+             
               <img
                 src={item.image}
                 alt={item.title}

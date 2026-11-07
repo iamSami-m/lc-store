@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import LoginSchema from './../schemas/LoginSchema'
-import SignUpSchema from './../schemas/SignUpSchema'
+import LoginSchema from './../schemas/LoginSchema.jsx'
+import SignUpSchema from './../schemas/SignUpSchema.jsx'
 import { UserContext } from '../context/UserContext'
 import {BASE_URL} from "../config.js"
 
@@ -14,7 +14,8 @@ export default function Auth() {
   const {login}=useContext(UserContext)
 
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName:"",
     password: "",
     tel: '',
     email: ""
@@ -28,6 +29,7 @@ export default function Auth() {
   }
   
   const handleSubmit = async (e) => {
+    
     e.preventDefault()
     setMessage("")
     setErrors({})
@@ -41,10 +43,9 @@ export default function Auth() {
       // SIGN UP
       if (userState === "Sign Up") {
         try{
-        
        validatedData = await SignUpSchema.validate(formData, { abortEarly: false })
-       console.log("validated data", validatedData)
-     
+       
+       
       }
       catch(error){
         setErrors({ form: "اطلاعات وارد شده اشتباه است" })
@@ -52,38 +53,46 @@ export default function Auth() {
         return
       }
         // چک کاربر تکراری
-        const check = await fetch(`${BASE_URL}/users?tel=${formData.tel}`)
-        const existingUser = await check.json()
-
-        if (existingUser.length > 0) {
+        const response = await fetch(`${BASE_URL}/users?tel=${formData.tel}`)
+        const existingUser = await response.json()
+        
+        if (response.ok) {
           setMessage("این شماره قبلاً ثبت شده")
           setLoading(false)
           return
         }
-
-        const res = await fetch(`${BASE_URL}/users`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(validatedData)
-        })
-
-        const data = await res.json()
-
-        setMessage("ثبت‌نام با موفقیت انجام شد ✅")
-        console.log(data)
-
-        setFormData({
-          name: "",
-          password: "",
-          tel: '',
-          email: ""
-        })
-        console.log("userstate",useState)
-        setUserState("Login")
         
-      }
+        else if(response.status==404){
+          const res = await fetch(`${BASE_URL}/users`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(validatedData)
+          })
+  
+          const data = await res.json()
+  
+          if(res.ok){
+            setMessage("ثبت‌نام با موفقیت انجام شد ✅")
+          
+  
+          setFormData({
+            firstName: "",
+            lastName: "",
+            password: "",
+            tel: '',
+            email: ""
+  
+          })
+          setUserState("Login")
+          }
+          
+          
+        }
+        }
+
+        
 
       // LOGIN
       else {
@@ -101,14 +110,13 @@ export default function Auth() {
         
         const res = await fetch(`${BASE_URL}/users`)
         const users = await res.json()
-        console.log("users:",users)
         const user = users.find(u =>
           String(u.tel).trim() === String(formData.tel).trim() &&
           String(u.password).trim() === String(formData.password).trim()
         )
 
         
-        console.log("user",user)
+        
 
 
 
@@ -117,10 +125,7 @@ export default function Auth() {
         if (user) {
           localStorage.setItem("user", JSON.stringify(user))
           login(user)
-          console.log(
-  "saved user:",
-  JSON.parse(localStorage.getItem("user"))
-)
+          
           setMessage("ورود موفق ✅")
           if(user.role==="admin")
             navigate('/admindashboard')
@@ -157,13 +162,22 @@ export default function Auth() {
             <>
               <input
                 type='text'
-                name="name"
+                name="firstName"
                 placeholder='نام'
                 className='w-full bg-white rounded-2xl p-2'
                 onChange={handleChange}
-                value={formData.name}
+                value={formData.firstName}
               />
-              {errors.name && <p className="text-red-500">{errors.name}</p>}
+              {errors.firstName && <p className="text-red-500">{errors.firstName}</p>}
+              <input
+                type='text'
+                name="lastName"
+                placeholder=' نام خانوادگی'
+                className='w-full bg-white rounded-2xl p-2 mt-3'
+                onChange={handleChange}
+                value={formData.lastName}
+              />
+              {errors.lastName && <p className="text-red-500">{errors.lastName}</p>}
 
               <input
                 type="email"

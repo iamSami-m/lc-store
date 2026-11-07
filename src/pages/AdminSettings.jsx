@@ -107,7 +107,6 @@ const AdminSettings = () => {
     //خطا : Error داخل پرانتز ننوشته بودم
     catch(error){
       if (error.name === "ValidationError") {
-      console.log(error.errors);
   }
 
     

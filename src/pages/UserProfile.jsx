@@ -120,7 +120,7 @@ const UserProfile = () => {
             </p>
           )}
         </div>
-
+<br />
         <div>
           <label>نام خانوادگی</label>
           <input className="w-full rounded-xl p-4 border" onChange={handleUserChange} name="lastName" value={newUser.lastName}/>
@@ -130,12 +130,12 @@ const UserProfile = () => {
             </p>
           )}
         </div>
-
+<br />
         <div>
           <label>تلفن همراه</label>
           <input className="w-full rounded-xl p-4 border" onChange={handleUserChange} name="tel" value={newUser.tel} disabled/>
         </div>
-
+<br />
         <div>
           <label>ایمیل</label>
           <input className="w-full rounded-xl p-4 border" onChange={handleUserChange} name="email" value={newUser.email}/>
@@ -145,7 +145,7 @@ const UserProfile = () => {
             </p>
           )}
         </div>
-
+          <br />  
         <div>
           <label>جنسیت</label>
           <select className="w-full rounded-xl p-4 border" onChange={handleUserChange} name="gender" value={newUser.gender}>
@@ -170,18 +170,20 @@ const UserProfile = () => {
 
       </form>
       <h1 className='font-extrabold mx-6 md:mx-8 lg:mx-10 text-xl'>تغییر کلمه عبور</h1>
-      <form action="" onSubmit={handlePasswordSubmit} className='grid grid-cols-1 md:grid-cols-2 gap-6 p-4 md:p-6 lg:p-8'>
+      <form action="" onSubmit={handlePasswordSubmit} className='grid grid-cols-1 md:grid-cols-2  gap-6 p-4 md:p-6 lg:p-8'>
         <div>
           <label htmlFor="">کلمه عبور فعلی</label>
-          <input type="text" name='currentPassword' value={passwordInfo.currentPassword} onChange={handlePasswordChange} className="w-full rounded-xl p-4 border"/>
+          <input type="password" name='currentPassword' value={passwordInfo.currentPassword} onChange={handlePasswordChange} className="w-full rounded-xl p-4 border"/>
         </div>
+        <br />
         <div>
           <label htmlFor="">کلمه عبور جدید</label>
-          <input type="text" name='newPassword' value={passwordInfo.newPassword} onChange={handlePasswordChange} className="w-full rounded-xl p-4 border"/>
+          <input type="password" name='newPassword' value={passwordInfo.newPassword} onChange={handlePasswordChange} className="w-full rounded-xl p-4 border"/>
         </div>
+        <br />
         <div>
           <label htmlFor="">تایید کلمه عبور جدید</label>
-          <input type="text" name='confirmPassword' value={passwordInfo.confirmPassword} onChange={handlePasswordChange} className="w-full rounded-xl p-4 border"/>
+          <input type="password" name='confirmPassword' value={passwordInfo.confirmPassword} onChange={handlePasswordChange} className="w-full rounded-xl p-4 border"/>
         </div>
         <div className="md:col-span-2">
           <button

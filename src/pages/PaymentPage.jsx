@@ -8,18 +8,19 @@ const PaymentPage = () => {
   const [searchParams] = useSearchParams()
   const id = searchParams.get("id")
   const navigate = useNavigate();
-
+  console.log("id",id)
   useEffect(() => {
-  fetch(`${BASE_URL}s/orders/${id}`)
+  fetch(`${BASE_URL}/orders/${id}`)
     .then(res => res.json())
     .then(data => setOrder(data))
+    
 }, [id])
 
-console.log("id:", id)
-console.log("order:", order)
+
+
   const handleSuccess = async () => {
     try {
-      await fetch(`${BASE_URL}/orders/${order.id}`, {
+      const res=await fetch(`${BASE_URL}/orders/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -42,10 +43,9 @@ console.log("order:", order)
           status: "paid",
         },
       }));
-
+      
       navigate("/paymentsuccess");
     } catch (error) {
-      console.log(error);
       alert("خطا در ثبت پرداخت");
     }
   };
@@ -76,7 +76,6 @@ console.log("order:", order)
 
       navigate("/paymentfail");
     } catch (error) {
-      console.log(error);
       alert("خطا در ثبت وضعیت پرداخت");
     }
   };

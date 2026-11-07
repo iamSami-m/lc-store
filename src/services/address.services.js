@@ -32,7 +32,6 @@ export const useAddresses = (userId) => {
           countyName: county?.name,
         };
       });
-
       return userAddresses;
     },
   });
@@ -45,7 +44,9 @@ export const useUpdateAddress=()=>{
       const res=await fetch(`${BASE_URL}/addresses/${id}`,
         {
           method:"PATCH",
-          headers:{"Content-Type":"application/json"},
+          headers:{
+            "Content-Type":"application/json"
+          },
           body:JSON.stringify(newAddress)
         }
       )
@@ -55,7 +56,9 @@ export const useUpdateAddress=()=>{
       return res.json()
     },
     onSuccess:()=>{
-      queryClient.invalidateQueries({queryKey:['addresses']})
+      queryClient.invalidateQueries({
+        queryKey:['addresses']
+      })
     }
   })
 }
@@ -76,20 +79,28 @@ export const useCreateAddress = () => {
           }),
         }
       );
-
       if (!res.ok) {
+
         throw new Error("Failed to create address");
       }
+      
 
-      return res.json();
+      const data=await res.json()
+      return data
+
+    
+      
     },
 
-    onSuccess: () => {
-      queryClient.invalidateQueries({
+   
+
+    onSuccess: async (data) => {
+    
+      await queryClient.invalidateQueries({
         queryKey: ["addresses"],
       });
+    
     },
-
     onError: (error) => {
       console.log(error.message);
     },
@@ -112,11 +123,13 @@ export const useDeleteAddress=()=>{
       }
       return res.json();
     },
-    onSuccess:()=>{
-      queryClient.invalidateQueries({
-        queryKey: ["addresses"],
-      });
-    },
+  
+      onSuccess:()=>{
+        queryClient.invalidateQueries({
+          queryKey:['addresses']
+        })
+      }
+    ,
     onError: (error) => {
       console.log(error.message);
     },

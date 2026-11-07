@@ -59,7 +59,7 @@ export default function Auth() {
         const data = await res.json()
 
         setMessage("ثبت‌نام با موفقیت انجام شد ✅")
-        console.log(data)
+        
 
         setFormData({
           name: "",
@@ -83,7 +83,7 @@ export default function Auth() {
           localStorage.setItem("user", JSON.stringify(data[0]))
           login(JSON.stringify(data[0]))
           setMessage("ورود موفق ✅")
-          console.log("user =>", data[0])
+          
         } else {
           setMessage("شماره یا رمز اشتباه است ❌")
         }

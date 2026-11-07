@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { MapPinCheckInside,Trash2,Pencil,Plus } from 'lucide-react';
+import { MapPinCheckInside,Trash2,Pencil,Plus, Server } from 'lucide-react';
 import {useAddresses,useCreateAddress,useDeleteAddress,useUpdateAddress} from '../services/address.services'
 import AddressSchema from '../schemas/AddressSchema'
 import {BASE_URL} from "../config.js"
@@ -9,6 +9,7 @@ const UserAddresses = () => {
   
   const [isNewOpen,setIsNewOpen]=useState(false)
   const [isEditOpen,setIsEditOpen]=useState(false)
+  const [errors,setErrors]=useState({})
   const [edittingAddress,setEdittingAddress]=useState(null)
   const [newProvince,setNewProvince]=useState("")
   const [newCounty,setNewCounty]=useState("")
@@ -21,7 +22,19 @@ const UserAddresses = () => {
   const DeleteAddress=useDeleteAddress()
   const UpdateAddress=useUpdateAddress()
 
-  
+  useEffect(()=>{
+    console.log("وضعیت mutation",{
+      isPending: CreateAddress.isPending,
+      isSuccess: CreateAddress.isSuccess,
+      isError:CreateAddress.isError,
+      error:CreateAddress.error
+    })
+  },[
+    CreateAddress.isPending,
+    CreateAddress.isSuccess,
+    CreateAddress.isError,
+    CreateAddress.error,
+  ])
   
   useEffect(()=>{
     fetch(`${BASE_URL}/provinces`)
@@ -33,7 +46,6 @@ const UserAddresses = () => {
   const handleProvinceChange=async (e)=>{
     const provinceId=e.target.value
     setNewProvince(provinceId)
-    console.log("newprovince:",newProvince)
 
     const data=await fetch(`${BASE_URL}/provinces/${provinceId}`)
     .then(res=>res.json())
@@ -51,34 +63,63 @@ const UserAddresses = () => {
         explanation: newExplanation,
         postalCode: postalCode,
       };
-      console.log("addressdata",addressData)
     try{
       const validatedData=await AddressSchema.validate(addressData,{abortEarly:false})
+      setErrors({})
       if(edittingAddress)
       {
         UpdateAddress.mutate({
           id: edittingAddress.id,
           newAddress: validatedData
 
+        },
+        {
+          onSuccess: ()=> {
+            setErrors({})
+            setIsNewOpen(false)
+          }
         })
       }
-      else
-        CreateAddress.mutate(validatedData)
+      else{
+        CreateAddress.mutate(validatedData,{
+          onSuccess: ()=> {
+            setNewProvince(""),
+            setNewCounty("")
+            setPostalCode("")
+          setNewExplanation("")
+          setErrors({})
+          setIsNewOpen(false)
+          },
+          onError: (error)=>{
+            console.log("خطای mutation",error)
+          }
+      })
+      }
+        
     }catch(error){
+      
+      console.log("ذخیره  نا موفق شد")
       if (error.name === "ValidationError") {
-      console.log(error.errors);
+      const newErrors={};
+
+      error.inner.forEach((item)=>{
+        if(item.path){
+          newErrors[item.path]=item.message;
+
+        }
+      });
+      setErrors(newErrors)
   }
   }
-  setNewCounty(""),
-  setNewCounty("")
-  setPostalCode("")
-  setNewExplanation("")
-  setEdittingAddress(null)
-  setIsNewOpen(false)
+  
   }
 
-  const handleDeleteAddress=(id)=>{
-    DeleteAddress.mutate(id)
+  const handleDeleteAddress=async (id)=>{
+    try {
+      await DeleteAddress.mutate(id);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   const handleEditAddress = async (address) => {
@@ -92,7 +133,6 @@ const UserAddresses = () => {
   const data = await fetch(
     `${BASE_URL}/provinces/${address.provinceId}`
   ).then(res => res.json());
-  console.log("provinceId:",address.provinceId)
   setAllCounties(data.counties);
 
   setIsNewOpen(true);
@@ -152,8 +192,14 @@ const UserAddresses = () => {
                     ))
                   }
                 </select>
+                {errors.provinceId && (
+                  <p className='text-red-500 rext-sm'>
+                    {errors.provinceId}
+                  </p>
+                )}
                 {/*Counties*/}
                 <select
+                name='countyId'
                   value={newCounty}
                   className='border-2'
                   onChange={(e)=>setNewCounty(e.target.value)}>
@@ -166,6 +212,11 @@ const UserAddresses = () => {
                     ))
                   }
                 </select>
+                {errors.countyId && (
+                  <p className='text-red-500 rext-sm'>
+                    {errors.countyId}
+                  </p>
+                )}
                 <textarea 
                   type="text"
                   name="explanation" 
@@ -176,15 +227,26 @@ const UserAddresses = () => {
                   rows={5}>
               
                 </textarea>
+                {errors.explanation && (
+                  <p className='text-red-500 rext-sm'>
+                    {errors.explanation}
+                  </p>
+                )}
                 <input 
+                name='postalCode'
                   type="text" 
                   value={postalCode}
                   placeholder='کد پستی خود را وارد کنید'
                   onChange={(e)=>setPostalCode(e.target.value)}
                   className='border-2'/>
+                  {errors.postalCode && (
+                  <p className='text-red-500 rext-sm'>
+                    {errors.postalCode}
+                  </p>
+                )}
               <div className='flex gap-3'>
                 <button type='submit' className='bg-green-500  py-2 px-3 text-black'>{edittingAddress?'ثبت تغییرات':'افزودن آدرس'}</button>
-                <button type='button' onClick={()=>setIsNewOpen(false)} className='bg-red-500 py-2 px-3 text-black' >بستن</button>
+                <button type='button' onClick={()=>{setIsNewOpen(false); setErrors({})}} className='bg-red-500 py-2 px-3 text-black' >بستن</button>
               </div>
               
             </form>

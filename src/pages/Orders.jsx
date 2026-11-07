@@ -16,12 +16,14 @@ const Orders = () => {
         const userOrders = data.filter(
           (order) => order.customer?.id === id
         );
+        
         setOrders(userOrders);
       });
   }, [id]);
 
-  const handleShowOrder = (orderId) => {
-    navigate(`/orderSummary/${orderId}?payment=false&admin=false`);
+  const handleShowOrder = (id) => {
+    
+    navigate(`/orderSummary/${id}?payment=false&admin=false`);
   };
 
   return (

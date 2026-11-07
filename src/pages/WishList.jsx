@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import {BASE_URL} from "../config.js"
+import { useNavigate } from 'react-router-dom'
 
 const WishList = () => {
   const [wishlist,setWishList]=useState([])
   const {id}=JSON.parse(localStorage.getItem("user"))
+  const navigate=useNavigate()
 
   useEffect(()=>{
     const loadWishes=async ()=>{
       const wishlistProductIds=await fetch(`${BASE_URL}/wishlists?userId=${id}`)
       .then(res=>res.json())
-    console.log(wishlistProductIds)
-
     const products=await fetch(`${BASE_URL}/products`)
       .then(res=>res.json())
       
     const wishListProducts=products.filter(product=>
-      wishlistProductIds.some(wish=>wish.productId===product.id)
+      wishlistProductIds.some(wish=>Number(wish.productId)===Number(product.id))
     ).map(product=>{
-      const wish=wishlistProductIds.find(wish=>wish.productId===product.id)
+      const wish=wishlistProductIds.find(wish=>Number(wish.productId)===Number(product.id))
       return {
         ...product,
-        wishId:wish.id
+        wishId:wish.wishId
       }
     }
       
@@ -40,7 +40,10 @@ const WishList = () => {
     setWishList((prev)=>
       prev.filter(item=>item.wishId!==id)
     )
-    console.log("wishlist",wishlist)
+  }
+
+  const handleClick=(itemId,wishId)=>{
+    navigate(`/products/productDetails?id=${itemId}&heart=true&wishId=${wishId}`);
   }
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
@@ -48,6 +51,7 @@ const WishList = () => {
         <div
           key={item.id}
           className="flex flex-col border-2 p-5 rounded-lg"
+          onClick={()=>handleClick(item.id,item.wishId)}
         >
           <img src={item.image} alt="" className="w-full" />
           <h1>{item.title}</h1>

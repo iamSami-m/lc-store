@@ -10,6 +10,7 @@ import {BASE_URL} from "../config.js"
 const Checkout = () => {
   const { cart, removeFromCart, decreaseQty, addQty } = useContext(CartContext)
   const {setOrder}=useContext(OrderContext)
+  const orderId=localStorage.getItem("orderId")
 
   const [provinces, setProvinces] = useState([])
   const [cities, setCities] = useState([])
@@ -35,7 +36,6 @@ const cityData= provinceData?.counties?.find(
 
 
   const { id, name, tel } = user || {}
-
   if (!cart?.length) return <Navigate to="/cart" />
   if (!user) return <Navigate to="/auth"/>
 
@@ -43,7 +43,7 @@ const cityData= provinceData?.counties?.find(
   const loadProvinceData = async (provinceId, countyId = null) => {
     const res = await fetch(`${BASE_URL}/provinces/${provinceId}`)
     const data = await res.json()
-
+    
     setCities(data.counties)
     setSelectedProvince(provinceId)
 
@@ -59,13 +59,12 @@ const cityData= provinceData?.counties?.find(
     fetch(`${BASE_URL}/provinces`)
       .then(res => res.json())
       .then(data => setProvinces(data))
-
+      
        if (!id) return;
     // user address
     fetch(`${BASE_URL}/addresses?userId=${id}`)
       .then(res => res.json())
       .then(async (data) => {
-
         setUserAddresses(data)
 
         if (data.length === 0) return
@@ -82,126 +81,101 @@ const cityData= provinceData?.counties?.find(
       })
 
   }, [id])
- console.log("selected addresses",userAddresses)
+ 
   // 🔥 تغییر استان
   const handleProvinceChange = (e) => {
     const value = Number(e.target.value)
     loadProvinceData(value)
   }
-  //ایجاد Id سفارش
- const generateOrderId = async()=>{
+  async function handleSubmitOrder() {
 
- // گرفتن همه سفارش‌ها از دیتابیس
- const res = await fetch(
-   `${BASE_URL}/orders`
- )
+    setLoading(true)
 
- // تبدیل پاسخ به آرایه سفارش‌ها
- const orders = await res.json()
-
- // شماره سفارش جدید
- // چون length از 0 شروع نمی‌شود
- // یک واحد اضافه می‌کنیم
- // مثال:
- // 25 سفارش → سفارش جدید = 26
- const lastNumber =
-   orders.length + 1
-
- // گرفتن سال فعلی
- // مثال: 2026
- const year =
-   new Date().getFullYear()
-
- // ساخت شناسه سفارش
- // padStart(6,"0")
- // اگر شماره کمتر از 6 رقم بود
- // اولش صفر اضافه می‌کند
- // مثال:
- // 5 → 000005
- // 32 → 000032
- // خروجی نهایی:
- // ORD-2026-000026
-
- return `ORD-${year}-${String(
-   lastNumber
- ).padStart(6,"0")}`
-
-}
-
-  const handleSubmitOrder= async ()=>{
-
-  setLoading(true)
-
-  try {
-    const itemsTotal =
-      cart.reduce(
-      (sum,item)=>
-        sum+(item.price*item.qty),
-      0
+    try {
+      const itemsTotal = cart.reduce(
+        (sum, item) => sum + (item.price * item.qty),
+        0
       )
 
-    const shippingCost = 50000
-    const discount = 0
+      const shippingCost = 50000
+      const discount = 0
 
- const finalTotal =
-  itemsTotal +
-  shippingCost -
-  discount
-  const orderId=await generateOrderId()
-  const res=await fetch(`${BASE_URL}/orders`,{
-    method:"POST",
-    headers: {
-    "Content-Type": "application/json"
-  },
-   body: JSON.stringify({
-       id:orderId,
-       orderId:orderId,
+      const finalTotal = itemsTotal +
+        shippingCost -
+        discount
+      //const orderId=await generateOrderId()
+      const newOrder = {
+        //id:orderId,
+        //orderId:orderId,
+        customer: {
+          id: user.id,
+          name,
+          tel
+        },
 
-  customer:{
- id:user.id,
- name,
- tel
-},
+        items: cart,
 
-  items: cart,
+        shippingAddress: {
+          provinceId: selectedProvince,
+          provinceName: provinceData?.name || "",
+          countyId: selectedCounty,
+          countyName: cityData?.name || "",
+          address: addressText
+        },
 
-  shippingAddress: {
-            provinceId: selectedProvince,
-            provinceName: provinceData?.name || "",
-            countyId: selectedCounty,
-            countyName: cityData?.name || "",
-            address: addressText
+        pricing: {
+          itemsTotal,
+          shippingCost,
+          discount,
+          finalTotal
+        },
+
+        payment: {
+          // method: "online",     // online | cod (در محل)
+          status: "pending", // pending | paid | failed | refunded
+          transactionId: null
+        },
+        //orderStatus: "draft", 
+        // draft → pending → paid → processing → shipped → delivered → cancelled
+        //createdAt: new Date().toISOString(),
+        //updatedAt: new Date().toISOString()
+      }
+      console.log("cart",cart)
+      if (!orderId) {
+        const res = await fetch(`${BASE_URL}/orders`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
           },
-
-  pricing:{
-   itemsTotal,
-   shippingCost,
-   discount,
-   finalTotal
-  },
-
-  payment: {
-    method: "online",     // online | cod (در محل)
-    status: "pending",    // pending | paid | failed | refunded
-    transactionId: null
-  },
-
-  orderStatus: "draft", 
-  // draft → pending → paid → processing → shipped → delivered → cancelled
-
-  createdAt: new Date().toISOString(),
-  updatedAt: new Date().toISOString()
-   })
-  })
-  const savedData = await res.json()
-const id=savedData.id
-    setOrder(savedData)
-    
-    navigate(`/ordersummary/${id}?payment=true`)
-}finally{
-  setLoading(false)
-}
+          body: JSON.stringify(newOrder)
+        })
+        const savedData = await res.json()
+        const orderId = savedData.id
+        localStorage.setItem("orderId", orderId)
+        setOrder(savedData)
+        navigate(`/ordersummary/${orderId}?payment=true`)
+      }
+      else {
+        const res = await fetch(`${BASE_URL}/orders/${orderId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newOrder)
+        })
+        if(res.ok){
+          navigate(`/ordersummary/${orderId}?payment=true`)
+        }
+        
+      } 
+    } finally {
+      setLoading(false)
+    }
   }
+useEffect(()=>{
+  
+},cart)
+  
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 w-full h-screen'>
 

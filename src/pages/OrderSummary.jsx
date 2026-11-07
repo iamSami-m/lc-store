@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { OrderContext } from '../context/OrderContext'
 import {BASE_URL} from "../config.js"
-import { Navigate, NavLink, useLocation, useNavigate,useParams, useSearchParams } from 'react-router-dom'
+import {  useNavigate,useParams, useSearchParams } from 'react-router-dom'
 
 const OrderSummary = () => {
-
   const { id } = useParams()
+  const  orderId = id ? id : localStorage.getItem("orderId")
   const [searchParams] = useSearchParams()
 
   const showPayment = searchParams.get("payment") === "true"
@@ -19,10 +19,9 @@ const OrderSummary = () => {
     fetch(`${BASE_URL}/orders/${id}`)
     .then(res=>res.json())
     .then(data=>{
-      console.log(data)
         setOrder(data[0])
         setOrderStatus(data[0].orderStatus)
-        setPaymentStatus(data[0].payment.status)
+        setPaymentStatus(data[0].payment.status)  
       })
   },[id])
   if (!order) {

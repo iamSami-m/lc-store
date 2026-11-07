@@ -5,7 +5,6 @@ import {BASE_URL} from "../config.js"
 
 const PaymentSuccess = () => {
   const {order,setOrder}=useContext(OrderContext)
-  console.log("order:",order)
 
   const saved=useRef(false)
 
@@ -18,6 +17,7 @@ const PaymentSuccess = () => {
       orderStatus:"پرداخت شده"
     }
     setOrder(updatOrder)
+    localStorage.removeItem("orderId")
     fetch(`${BASE_URL}/orders`,{
           method:"Post",
           headers: {
